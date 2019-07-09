@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-
-    <header>
+    <header class="container">
       <div class="nav-top">
         <nav>
           <ul>
@@ -11,7 +10,7 @@
             <li class="nav-item">
               Вязание на заказ
             </li>
-            <li class="nav-item logo">
+            <li class="nav-item logo text-center">
               <img id ="logo-top" style="position: absolute" src="./assets/catalog-images/mishkalogodesktopsvg.png"/>
             </li>
             <li class="nav-item cart">
@@ -21,7 +20,7 @@
         </nav>
       </div>
     </header>
-    <footer>
+    <footer class="container">
       <div class = "nav-bottom">
         <nav>
           <ul>
@@ -61,40 +60,43 @@ export default {
 
 <style scoped>
 
-.nav-top {
-  border: 1px groove greenyellow;
+ul {
+  padding: 3px;
+  display: flex;
+  border-bottom: 1px solid #bbb;
 }
 
-.nav-item logo {
+li {
+  border-right: 1px solid #bbb;
+}
+.nav-top {
   position: relative;
 }
 
-.nav-bottom {
-  border: 1px groove greenyellow;
+.nav-item{
+  display: flex; 
+  padding: 10px 10px;
+}
+
+.nav-item.logo {
+  position: relative;
 }
 
 #logo-top {
   position: absolute;
   top: 5px;
   right: -20px;
-  max-height: 3rem;
+  max-height: 2rem;
 }
 
-.nav-top ul {
-  display: flex;
-  padding: 10px;
-  margin: 10px;
+.cart{
+  position: absolute;
+  right: 1px;
+  float: left;
 }
 
-.nav-bottom{
+.nav-bottom {
+  border: 1px groove greenyellow;
   background-color: #bbb;
 }
-
-.nav-item{
-  display: inline-block;
-  padding: 10px 10px;
-  margin: 10px;
-  border: 1px groove #bbb;
-}
-
 </style>
