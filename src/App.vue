@@ -1,35 +1,39 @@
 <template>
   <div id="app">
     <header class="container">
-      <div class="nav-top">
-        <nav>
-          <ul>
-            <li class="nav-item">
-              Каталог товаров
-            </li>
-            <li class="nav-item">
-              Вязание на заказ
-            </li>
-            <li class="nav-item logo text-center">
-              <img id ="logo-top" style="position: absolute" src="./assets/catalog-images/mishkalogodesktopsvg.png"/>
-            </li>
-            <li class="nav-item cart">
-              Корзина : {{cartLenth}}
-            </li>
-          </ul>
+        <nav class="nav-top">
+            <div class="nav-block col-sm-3">
+                Каталог товаров
+            </div>
+            <div class="nav-block col-sm-5">
+                <div class="row">
+                  <div class='col-sm-6'>                  
+                    Вязание на заказ
+                  </div>
+                  <div class="col-sm-6">
+                    <img class = "nav-top-logo" src="./assets/catalog-images/mishkalogodesktopsvg.png"/>
+                  </div>
+                </div>
+            </div>
+            <div class="nav-block col-sm-1"> 
+              <img class="nav-item-img" src="./assets/catalog-images/searchsvg.png"/>
+            </div>
+            <div class="nav-block col-sm-3">
+              <img class="nav-item-img" src="./assets/catalog-images/cartsvg.png"/>
+            </div>
         </nav>
-      </div>
     </header>
+    <div class="content">
+      <router-view></router-view>
+    </div>
     <footer class="container">
-      <div class = "nav-bottom">
-        <nav>
+        <nav class = "nav-bottom">
           <ul>
             <li class = "nav-item">
               <img id ="logo-bottom" src="./assets/catalog-images/logofootersvg.png"/>
             </li>
           </ul>
         </nav>
-      </div>
     </footer>
   </div>
 </template>
@@ -60,43 +64,47 @@ export default {
 
 <style scoped>
 
-ul {
-  padding: 3px;
-  display: flex;
-  border-bottom: 1px solid #bbb;
-}
-
-li {
-  border-right: 1px solid #bbb;
-}
 .nav-top {
-  position: relative;
+  font-size: 18px;
+  display: flex;
 }
 
-.nav-item{
-  display: flex; 
-  padding: 10px 10px;
+.nav-block {
+  padding: 20px 10px;
+  font-weight: bold;
+  display: flex;
+  border: 1px solid gray;
 }
 
-.nav-item.logo {
-  position: relative;
-}
-
-#logo-top {
+.nav-top-logo {
   position: absolute;
-  top: 5px;
-  right: -20px;
-  max-height: 2rem;
+  top: -15px;
+  margin: 0px auto 0px auto;
+  max-height: 6rem;
 }
 
-.cart{
-  position: absolute;
-  right: 1px;
-  float: left;
+.nav-item-img {
+  max-height: 25px;
+  margin: 0% auto;
+}
+
+.cart {
+  margin-right: auto;
 }
 
 .nav-bottom {
   border: 1px groove greenyellow;
   background-color: #bbb;
 }
+
+.nav-bottom ul {
+  list-style: none;
+}
+
+.content {
+    display: flex;
+    margin:  10px auto 0 auto;
+}
+
+
 </style>
