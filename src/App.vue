@@ -1,30 +1,41 @@
 <template>
   <div id="app">
     <header class="container">
-        <nav class="nav-top">
+        <nav class="nav-top row">
             <div class="nav-block col-sm-3">
+              <div class="nav-item">
                 Каталог товаров
+              </div>
             </div>
             <div class="nav-block col-sm-5">
-                <div class="row">
-                  <div class='col-sm-6'>                  
+              <div style="justify-content: space-between;">
+                  <div class="nav-item">                  
                     Вязание на заказ
                   </div>
-                  <div class="col-sm-6">
-                    <img class = "nav-top-logo" src="./assets/catalog-images/mishkalogodesktopsvg.png"/>
+                  <div class="nav-item">
+                    <img  class = "nav-top-logo" src="./assets/catalog-images/mishkalogodesktopsvg.png"/>
                   </div>
-                </div>
+              </div>
             </div>
             <div class="nav-block col-sm-1"> 
-              <img class="nav-item-img" src="./assets/catalog-images/searchsvg.png"/>
+              <div class="nav-item">
+                <img class="nav-item-img" src="./assets/catalog-images/searchsvg.png"/>
+              </div>
             </div>
             <div class="nav-block col-sm-3">
-              <img class="nav-item-img" src="./assets/catalog-images/cartsvg.png"/>
+              <div class="nav-item">
+                <img class="nav-item-img" src="./assets/catalog-images/cartsvg.png"/>
+              </div>
+              <div class="nav-item">
+                Корзина: {{cartState}}
+              </div>
             </div>
         </nav>
     </header>
-    <div class="content">
-      <router-view></router-view>
+    <div class="container">
+      <div class="row">
+       <router-view></router-view>
+      </div>
     </div>
     <footer class="container">
         <nav class = "nav-bottom">
@@ -47,7 +58,7 @@ export default {
     return { 
       logoTop: '',
       logoBottom: '',
-      cartLenth: 'пока пуста',
+      cartState: 'пока пуста',
     };
   },
   computed: {
@@ -70,22 +81,25 @@ export default {
 }
 
 .nav-block {
-  padding: 20px 10px;
+  padding: 10px 5px;
   font-weight: bold;
   display: flex;
+  justify-content: space-around;
   border: 1px solid gray;
 }
 
+.nav-item {
+  margin: 15px;
+  display: inline;
+}
+
 .nav-top-logo {
-  position: absolute;
-  top: -15px;
-  margin: 0px auto 0px auto;
   max-height: 6rem;
+  margin-left: auto;
 }
 
 .nav-item-img {
   max-height: 25px;
-  margin: 0% auto;
 }
 
 .cart {

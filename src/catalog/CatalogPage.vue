@@ -1,7 +1,6 @@
 <template>
-    <div class="content">
-        <HeaderSection :message="headerMessage"/>
-    </div>
+    <HeaderSection :message="headerMessage" 
+                    backGround = "gray"/>
 </template>
 
 <script>
@@ -9,7 +8,7 @@ import HeaderSection from "../shared/HeaderSection"
 
 export default {
     name: "CatalogPage",
-    components: { HeaderSection},
+    components: { HeaderSection },
     data() {
         return {
             headerMessage: "Каталог товаров"
@@ -19,8 +18,13 @@ export default {
 </script>
 
 <style scoped>
+
 .content {
   display: flex;
-  justify-content: stretch;
 }
+
+.header {
+    background-color: lightgrey;
+}
+
 </style>
