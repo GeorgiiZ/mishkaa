@@ -1,24 +1,30 @@
 <template>
-  <div id="app">
-    <header class="container">
-        <nav class="nav-top row">
+  <div id="app" style="height: 100%;">
+    <header>
+        <nav>
             <div class="nav-block col-sm-3">
-              <div class="nav-item">
-                Каталог товаров
-              </div>
+                  <div class="nav-item">  
+                    Каталог товаров
+                  </div>
+                  <div class="nav-item-absolute">  
+                    Новые поступления
+                  </div>
             </div>
             <div class="nav-block col-sm-5">
-              <div style="justify-content: space-between;">
-                  <div class="nav-item">                  
+              <div>
+                  <div class="nav-item" style="display: inline;">                  
                     Вязание на заказ
                   </div>
-                  <div class="nav-item">
-                    <img  class = "nav-top-logo" src="./assets/catalog-images/mishkalogodesktopsvg.png"/>
-                  </div>
+                  <div class="nav-item" style="display: inline;"> 
+                      <img  class = "nav-top-logo" src="./assets/catalog-images/mishkalogodesktopsvg.png"/>
+                  </div> 
+              </div>
+              <div class="nav-item-absolute">
+                Распродажа
               </div>
             </div>
             <div class="nav-block col-sm-1"> 
-              <div class="nav-item">
+              <div class="nav-item"> 
                 <img class="nav-item-img" src="./assets/catalog-images/searchsvg.png"/>
               </div>
             </div>
@@ -29,22 +35,24 @@
               <div class="nav-item">
                 Корзина: {{cartState}}
               </div>
+              <div class="nav-item-absolute">
+                Бесплатная доставка по России
+              </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-      <div class="row">
-       <router-view></router-view>
-      </div>
-    </div>
+    <main style="background-color: #bbb;" class="main-content">
+      <router-view   name="header"></router-view>
+      <router-view></router-view>
+    </main>
     <footer class="container">
-        <nav class = "nav-bottom">
+      <div class="row">
           <ul>
             <li class = "nav-item">
               <img id ="logo-bottom" src="./assets/catalog-images/logofootersvg.png"/>
             </li>
           </ul>
-        </nav>
+      </div>
     </footer>
   </div>
 </template>
@@ -68,15 +76,17 @@ export default {
 </script>
 
 <style>
-  #app{
-    font-family: sans-serif;
-  }
-</style>
 
-<style scoped>
+body, #app {
+  min-height: 100vh; 
+}
 
-.nav-top {
-  font-size: 18px;
+#app {
+  display: flex;
+  flex-direction: column
+}
+
+nav {
   display: flex;
 }
 
@@ -84,13 +94,21 @@ export default {
   padding: 10px 5px;
   font-weight: bold;
   display: flex;
-  justify-content: space-around;
+  position: relative;
   border: 1px solid gray;
 }
 
 .nav-item {
+  font-size: 16px;
   margin: 15px;
-  display: inline;
+}
+
+.nav-item-absolute {
+  font-size: 14px;
+  margin: 15px;
+  position: absolute;
+  top: 80px;
+  z-index: 1;
 }
 
 .nav-top-logo {
@@ -102,23 +120,22 @@ export default {
   max-height: 25px;
 }
 
-.cart {
-  margin-right: auto;
+footer {
+  margin-top: auto;
 }
 
-.nav-bottom {
-  border: 1px groove greenyellow;
-  background-color: #bbb;
-}
-
-.nav-bottom ul {
+footer ul {
   list-style: none;
 }
 
-.content {
-    display: flex;
-    margin:  10px auto 0 auto;
+header {
+  width: 1150px;
+  margin: 0 auto;
 }
 
+.main-content {
+  width: 1150px;
+  margin: 0 auto;
+}
 
 </style>
