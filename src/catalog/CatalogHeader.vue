@@ -1,11 +1,9 @@
 <template>
-    <div class="catalogHeader">
-        <div class="header-title">
+    <div class="catalog-header">
+        <div class="catalog-header__title">
             <h1>{{message}}</h1>
         </div>
-        <img class='catalog-header__image' src="../assets/index-images/herodesktopjpg.png"/>
     </div>
-
 </template>
 
 <script>
@@ -21,25 +19,19 @@ export default {
 
 <style scoped>
 
-.catalog-header__image{
-    max-height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.catalogHeader {
+.catalog-header {
     position: relative;
+    display: flex;
+    justify-content: center;
     height: 400px;
 }
 
-.header-title {
-    position: relative;
-    padding: 50px;
-    text-align: center;
+.catalog-header__title {
+    margin-top: 100px;
+    z-index: 1;
 }
 
-.catalogHeader::before {
+.catalog-header::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -47,15 +39,6 @@ export default {
     background: url("../assets/catalog-images/zigzagfilldesktopsvg.png") repeat-x ;
     bottom: 0;
     left: 0;
-}
-
-h1 {
-    font-weight: bold;
-}
-
-.bottom-img {
-    display: block;
-    margin: 0 auto;
 }
 
 </style>

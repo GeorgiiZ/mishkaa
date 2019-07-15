@@ -78,16 +78,17 @@ export default {
 <style>
 
 body, #app {
-  min-height: 100vh; 
+    height: 10000px;
 }
 
 #app {
   display: flex;
-  flex-direction: column
+  flex-direction: column;
 }
 
 nav {
   display: flex;
+  top: 0px;
 }
 
 .nav-block {

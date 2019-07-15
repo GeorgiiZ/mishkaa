@@ -11,20 +11,21 @@ Vue.use(Router);
 
 export default new Router({
     mode: 'history',
-    routes: [{
+    routes: [
+        {
             path:'/',
+            name: 'home',
+            components: {
+                header: HomeHeader,
+                default: HomePage,
+                },
+        }, 
+        {
+            path:'/catalog',
             name: 'Catalog',
             components: {
                 header: CatalogHeader,
                 default: CatalogPage,
             },
-        },
-        {
-            path:'/mishka-form',
-            name: 'Form',
-            components: {
-                header: HomeHeader,
-                default: HomePage,
-        } 
-    }]
+        }]
 })
