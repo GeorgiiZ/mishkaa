@@ -34,7 +34,7 @@
         </nav>
     </header>
     <main class="main-content">
-      <router-view name="header" style="  background-color: #bbb;"></router-view>
+      <router-view name="header" style="  background-color: #F5F5F5;"></router-view>
       <router-view></router-view>
     </main>
     <footer class="container">

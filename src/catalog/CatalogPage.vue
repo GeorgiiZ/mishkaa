@@ -8,6 +8,7 @@
                     <p>
                         <span v-for="(parameter, key) in product.parameters" :key="key">{{key}} {{parameter}} </span> 
                     </p>
+                    <hr>
                 </article>
             </section>
         </div>
@@ -52,6 +53,11 @@ export default {
     padding: 20px;
     display: flex;
     flex-direction: column;
+}
+
+hr {
+    font-weight: 2px;
+    background-color: black;
 }
 
 </style>

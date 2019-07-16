@@ -23,8 +23,8 @@ const products = [
         src: images("./photo3desktop.png"),
         name: "Большая корзинка для игрушек",
         parameters: {
-            длинна: "30",
-            диаметр: "30"
+            высота: "30 см",
+            диаметр: "30 см"
         },
         cost: "1500 руб."
     
