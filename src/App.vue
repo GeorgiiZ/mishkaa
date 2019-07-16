@@ -1,54 +1,46 @@
 <template>
   <div id="app" style="height: 100%;">
     <header>
-        <nav>
-            <div class="nav-block col-sm-3">
-                  <div class="nav-item">  
+        <nav class="nav-list">
+            <div class="nav-item col-sm-2">
+                <router-link class="nav-link" :to="{name: 'Catalog'}" exact>
                     Каталог товаров
-                  </div>
-                  <div class="nav-item-absolute">  
-                    Новые поступления
-                  </div>
+                </router-link>
+                <div class="nav-item__absolute">  
+                  Новые поступления
+                 </div>
             </div>
-            <div class="nav-block col-sm-5">
-              <div>
-                  <div class="nav-item" style="display: inline;">                  
-                    Вязание на заказ
-                  </div>
-                  <div class="nav-item" style="display: inline;"> 
-                      <img  class = "nav-top-logo" src="./assets/catalog-images/mishkalogodesktopsvg.png"/>
-                  </div> 
-              </div>
-              <div class="nav-item-absolute">
-                Распродажа
+            <div class="nav-item col-sm-5">
+              <router-link class="nav-link" to="/">
+                 Вязание на заказ
+              </router-link>
+               <img  class = "nav__logo" src="./assets/catalog-images/mishkalogodesktopsvg.png"/>
+               <div class="nav-item__absolute">
+                 Распродажа
               </div>
             </div>
-            <div class="nav-block col-sm-1"> 
-              <div class="nav-item"> 
-                <img class="nav-item-img" src="./assets/catalog-images/searchsvg.png"/>
-              </div>
+            <div class="nav-item col-sm-1"> 
+               <img class="nav-item__img" src="./assets/catalog-images/searchsvg.png"/>
             </div>
-            <div class="nav-block col-sm-3">
-              <div class="nav-item">
-                <img class="nav-item-img" src="./assets/catalog-images/cartsvg.png"/>
-              </div>
-              <div class="nav-item">
+            <div class="nav-item col-sm-4">
+              <img class="nav-item__img--cart" src="./assets/catalog-images/cartsvg.png"/>
+              <router-link class="nav-link" to="/">
                 Корзина: {{cartState}}
-              </div>
-              <div class="nav-item-absolute">
+              </router-link>
+              <div class="nav-item__absolute--light">
                 Бесплатная доставка по России
               </div>
             </div>
         </nav>
     </header>
-    <main style="background-color: #bbb;" class="main-content">
-      <router-view   name="header"></router-view>
+    <main class="main-content">
+      <router-view name="header" style="  background-color: #bbb;"></router-view>
       <router-view></router-view>
     </main>
     <footer class="container">
       <div class="row">
           <ul>
-            <li class = "nav-item">
+            <li>
               <img id ="logo-bottom" src="./assets/catalog-images/logofootersvg.png"/>
             </li>
           </ul>
@@ -78,7 +70,8 @@ export default {
 <style>
 
 body, #app {
-    height: 10000px;
+    height: 1000px;
+    background-color: white;
 }
 
 #app {
@@ -86,39 +79,62 @@ body, #app {
   flex-direction: column;
 }
 
-nav {
-  display: flex;
+nav{
+  width: 1150px;
+  margin: 0 auto;
   top: 0px;
-}
-
-.nav-block {
-  padding: 10px 5px;
-  font-weight: bold;
   display: flex;
-  position: relative;
-  border: 1px solid gray;
 }
 
 .nav-item {
-  font-size: 16px;
-  margin: 15px;
+  font-weight: bold;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid gray;
 }
 
-.nav-item-absolute {
+.nav-item__absolute {
   font-size: 14px;
-  margin: 15px;
+  font-weight: bold;
   position: absolute;
-  top: 80px;
+  top: 100px;
+  margin: 15px;
   z-index: 1;
 }
 
-.nav-top-logo {
-  max-height: 6rem;
-  margin-left: auto;
+.nav-item__absolute--light {
+  font-size: 14px;
+  font-weight: lighter;
+  position: absolute;
+  top: 100px;
+  margin: 15px;
+  z-index: 1;
 }
 
-.nav-item-img {
+
+.nav__logo {
+  width: 149px;
+	height: 72px;
+  margin: 0 auto;
+}
+
+.nav-item__img {
   max-height: 25px;
+  margin: 0 auto;
+}
+
+.nav-item__img--cart {
+  max-height: 25px;
+  margin: 0 15px;
+}
+
+
+.nav-link {
+  color: inherit;
+  text-decoration: none;
+  margin: 0 15px;
 }
 
 footer {
@@ -129,14 +145,12 @@ footer ul {
   list-style: none;
 }
 
-header {
+.main-content {
   width: 1150px;
   margin: 0 auto;
 }
 
-.main-content {
-  width: 1150px;
-  margin: 0 auto;
+.router-link-active {
 }
 
 </style>

@@ -1,10 +1,10 @@
 <template>
-    <div class="home-header">
+    <section class="home-header">
         <div class="home-header__title">
             <h1>{{message}}</h1>
         </div>
         <img class='home-header__image' src="../assets/index-images/herodesktopjpg.png"/>
-    </div>
+    </section>
 </template>
 
 <script>

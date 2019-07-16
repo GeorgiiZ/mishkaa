@@ -23,20 +23,25 @@ export default {
     position: relative;
     display: flex;
     justify-content: center;
-    height: 400px;
+    align-items: center;
+    height: 200px;
 }
 
 .catalog-header__title {
-    margin-top: 100px;
     z-index: 1;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-weight: bold;
 }
 
 .catalog-header::after {
     content: '';
     position: absolute;
-    width: 100%;
-    height: 34px;
-    background: url("../assets/catalog-images/zigzagfilldesktopsvg.png") repeat-x ;
+    width: 1150px;
+	height: 34px;
+    background: url("../assets/catalog-images/zigzagfilldesktopsvg.png");
     bottom: 0;
     left: 0;
 }

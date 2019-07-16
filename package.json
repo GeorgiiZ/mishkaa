@@ -8,12 +8,14 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "require-context": "^1.1.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.7"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.9.0",
     "@vue/cli-service": "^3.9.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.35.3"
   }
 }
