@@ -1,8 +1,6 @@
 <template>
     <div class="catalog-header">
-        <div class="catalog-header__title">
-            <h1>{{message}}</h1>
-        </div>
+        <span class="catalog-header__title">{{message}}</span>
     </div>
 </template>
 
@@ -24,19 +22,16 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    height: 255px;
     margin: auto 0;
 }
 
 .catalog-header__title {
     z-index: 1;
+    font-weight: bold;
+    font-size: 50px;
 }
 
-.catalog-header__title h1 {
-    position: relative;
-    bottom: 20px;
-    font-weight: bold;
-}
 
 .catalog-header::after {
     content: '';

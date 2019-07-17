@@ -50,10 +50,10 @@
           <img class="footer-main__social-img" src="./assets/catalog-images/fbsvg.png"/>
           <img class="footer-main__social-img" src="./assets/catalog-images/twittersvg.png"/>
         </div>
-        <section class="footer-main__develop">
+        <div class="footer-main__develop">
           <span class="footer-main__develop-capture">Разработано</span>
           <img src="./assets/catalog-images/htmlacademysvg.png"/>
-        </section>
+        </div>
     </footer>
   </div>
 </template>
@@ -143,20 +143,13 @@ body, #app {
 }
 
 .footer-main {
-  position: relative;
   width: 1150px;
-  margin-top: auto; 
-  margin-left: auto;
-  margin-right: auto; 
-  padding: 30px;
+  margin: auto auto 0 auto; 
+  padding: 50px;
   display: flex;
   background-color: #F5F5F5;
 }
 
-.footer-main__logo {
-  display: flex;
-  align-items: center;
-}
 
 .footer-main__social-links {
   display: flex;
@@ -171,13 +164,14 @@ body, #app {
 }
 
 .footer-main__develop {
-  display: inline-block;
+  display: flex;
+  align-content: center;
 }
 
 .footer-main__develop-capture {
   font-size: 20px;
   font-weight: bold;
-  margin-right: 20px; 
+  margin-right: 25px; 
 }
 
 </style>

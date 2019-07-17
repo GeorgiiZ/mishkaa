@@ -1,32 +1,30 @@
 <template>
     <div class="catalog-main">
-        <div class="products-list">
-            <div v-for="(product, idx) in availibleProducts" :key="idx" class="product">
+        <div class="products">
+            <div v-for="(product, idx) in availibleProducts" :key="idx" class="products-item">
                 <img :src="product.src"/>
-                <section class="product__desc">
+                <section class="products-item__desc">
                     <article>
                         <h4><strong>{{product.name}}</strong></h4>
-                        <p>
-                            <span v-for="(parameter, key, idx) in product.parameters" :key="key">
-                                <span v-if="idx === 0">{{key | capitalize}} </span> 
-                                <span v-else>, {{key}}</span>  
-                                {{parameter}} 
+                        <p class="products-item__desc-params">
+                            <span v-for="(parameter, key) in product.parameters" :key="key">
+                                 {{key}} {{parameter}},  
                             </span> 
                         </p>
                         <hr>
                     </article>
-                    <div class="product__cost-block">
+                    <div class="products-item__cost">
                         <strong>{{product.cost | currency('руб.')}}</strong>
-                        <img class="product__cart-img" src="../assets/catalog-images/cartsvg.png"></img>
+                        <img class="products-item__cart" src="../assets/catalog-images/cartsvg.png"/>
                     </div>
                 </section>
             </div>
         </div>
         <div class="production">
-            <figure class="production-video">
+            <figure class="production__video">
                 <img src="../assets/catalog-images/videodesktop.png"/>
             </figure>
-            <div class="production-desc">
+            <div class="production__desc">
                 <img src="../assets/catalog-images/videosvg.png"/>
                 <article>
                     <h4><strong>Процесс производства</strong></h4>
@@ -34,9 +32,7 @@
                         По просьбам наших любимых фоловеров мы сняли подробное видео о том, как появляются наши товары. 
                     </p>
                 </article>
-                <h5 class="make-order">
-                    <strong>СДЕЛАТЬ ЗАКАЗ</strong>
-                </h5>
+                <h5 class="make-order">СДЕЛАТЬ ЗАКАЗ</h5>
             </div>
         </div>
     </div>
@@ -69,32 +65,29 @@ export default {
 <style scoped>
 
 .catalog-main {
-    padding: 30px;
+    padding: 50px;
     margin: 50px 0;
 }
 
-.products-list {
+.products{
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
 }
 
-.product {
-    display: flex;
-    flex-direction: column;
-}
-
-.product__desc {
+.products-item__desc {
     padding: 20px;
-    display: flex;
-    flex-direction: column;
 }
 
-.product__cost-block {
+.products-item__desc-params::first-letter {
+    text-transform: capitalize; 
+}
+
+.products-item__cost {
     display: flex;
 }
 
-.product__cart-img {
+.products-item__cart {
   max-height: 25px;
   position: relative;
   display: inline-block;
@@ -105,16 +98,12 @@ export default {
     display: flex;
 }
 
-.production-desc {
+.production__desc {
     flex-direction: column;
     padding: 90px;
 }
 
-.camera-img {
-    height: 25px;
-}
-
-.production-video {
+.production__video {
 	width: 682px;
 	height: 455px;
 }
@@ -122,6 +111,7 @@ export default {
 .make-order {
     text-align: center;
     margin: 75px 0;
+    font-weight: bold;
 }
 
 hr {
