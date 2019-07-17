@@ -25,14 +25,16 @@ export default {
     justify-content: center;
     align-items: center;
     height: 200px;
+    margin: auto 0;
 }
 
 .catalog-header__title {
     z-index: 1;
-    margin-bottom: 20px;
 }
 
-h1 {
+.catalog-header__title h1 {
+    position: relative;
+    bottom: 20px;
     font-weight: bold;
 }
 

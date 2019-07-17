@@ -69,7 +69,7 @@ export default {
 <style scoped>
 
 .catalog-main {
-    padding: 50px;
+    padding: 30px;
     margin: 50px 0;
 }
 
