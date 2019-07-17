@@ -6,7 +6,7 @@
                 <router-link class="nav-link" :to="{name: 'Catalog'}" exact>
                     Каталог товаров
                 </router-link>
-                <div class="nav-item__absolute">  
+                <div class="nav-item__text-outer">  
                   Новые поступления
                  </div>
             </div>
@@ -14,8 +14,8 @@
               <router-link class="nav-link" to="/">
                  Вязание на заказ
               </router-link>
-               <img  class = "nav__logo" src="./assets/catalog-images/mishkalogodesktopsvg.png"/>
-               <div class="nav-item__absolute">
+              <img  class = "nav__logo" src="./assets/catalog-images/mishkalogodesktopsvg.png"/>
+              <div class="nav-item__text-outer">
                  Распродажа
               </div>
             </div>
@@ -23,28 +23,33 @@
                <img class="nav-item__img" src="./assets/catalog-images/searchsvg.png"/>
             </div>
             <div class="nav-item col-sm-4">
-              <img class="nav-item__img--cart" src="./assets/catalog-images/cartsvg.png"/>
+              <img class="nav-item__img-cart" src="./assets/catalog-images/cartsvg.png"/>
               <router-link class="nav-link" to="/">
                 Корзина: {{cartState}}
               </router-link>
-              <div class="nav-item__absolute--light">
+              <div class="nav-item__text-outer--light">
                 Бесплатная доставка по России
               </div>
             </div>
         </nav>
     </header>
     <main class="main-content">
-      <router-view name="header" style="  background-color: #F5F5F5;"></router-view>
+      <router-view name="header" style="background-color: #F5F5F5;"></router-view>
       <router-view></router-view>
     </main>
-    <footer class="container">
-      <div class="row">
-          <ul>
-            <li>
-              <img id ="logo-bottom" src="./assets/catalog-images/logofootersvg.png"/>
-            </li>
-          </ul>
-      </div>
+    <footer class="footer-main">
+        <div class="footer-main__logo">
+          <img  src="./assets/catalog-images/logofootersvg.png"/>
+        </div>
+        <div class="footer-main__social-links">
+          <img class="footer-main__social-img" src="./assets/catalog-images/instasvg.png"/>
+          <img class="footer-main__social-img" src="./assets/catalog-images/fbsvg.png"/>
+          <img class="footer-main__social-img" src="./assets/catalog-images/twittersvg.png"/>
+        </div>
+        <section class="footer-main__develop">
+          <span class="footer-main__develop-capture">Разработано</span>
+          <img src="./assets/catalog-images/htmlacademysvg.png"/>
+        </section>
     </footer>
   </div>
 </template>
@@ -70,7 +75,6 @@ export default {
 <style>
 
 body, #app {
-    height: 1000px;
     background-color: white;
 }
 
@@ -95,7 +99,7 @@ nav{
   border: 1px solid gray;
 }
 
-.nav-item__absolute {
+.nav-item__text-outer {
   font-size: 14px;
   font-weight: bold;
   position: absolute;
@@ -104,7 +108,7 @@ nav{
   z-index: 1;
 }
 
-.nav-item__absolute--light {
+.nav-item__text-outer--light {
   font-size: 14px;
   font-weight: lighter;
   position: absolute;
@@ -121,11 +125,10 @@ nav{
 }
 
 .nav-item__img {
-  max-height: 25px;
   margin: 0 auto;
 }
 
-.nav-item__img--cart {
+.nav-item__img-cart {
   max-height: 25px;
   margin: 0 15px;
 }
@@ -137,20 +140,48 @@ nav{
   margin: 0 15px;
 }
 
-footer {
-  margin-top: auto;
+.footer-main {
+  position: relative;
+  width: 1150px;
+  margin-top: auto; 
+  margin-left: auto;
+  margin-right: auto; 
+  padding: 50px;
+  display: flex;
+  background-color: #F5F5F5;
 }
 
-footer ul {
-  list-style: none;
+.footer-main__logo {
+  display: flex;
+  align-items: center;
 }
+
 
 .main-content {
   width: 1150px;
   margin: 0 auto;
 }
 
-.router-link-active {
+.footer-main__social-links {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.footer-main__social-img {
+  margin: 0 15px;
+  height: 20px;
+}
+
+.footer-main__develop {
+  display: inline-block;
+}
+
+.footer-main__develop-capture {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 20px; 
 }
 
 </style>

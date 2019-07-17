@@ -8,7 +8,7 @@ const products = [
             рост: "30 см",
             вес: "200 г"
         },
-        cost: "1200 руб."
+        cost: "1200"
     }, 
     {
         src: images("./photo2desktop.png"),
@@ -17,7 +17,7 @@ const products = [
             высота: "10 см",
             диаметр: "15 см"
         },
-        cost: "690 руб."
+        cost: "690"
     }, 
     {
         src: images("./photo3desktop.png"),
@@ -26,7 +26,7 @@ const products = [
             высота: "30 см",
             диаметр: "30 см"
         },
-        cost: "1500 руб."
+        cost: "1500"
     
     }, 
 ];

@@ -1,16 +1,43 @@
 <template>
-    <div class="products">
-        <div v-for="(product, idx) in availibleProducts" :key="idx" class="products-item">
-            <img :src="product.src"/>
-            <section class="product-item__description">
+    <div class="catalog-main">
+        <div class="products-list">
+            <div v-for="(product, idx) in availibleProducts" :key="idx" class="product">
+                <img :src="product.src"/>
+                <section class="product__desc">
+                    <article>
+                        <h4><strong>{{product.name}}</strong></h4>
+                        <p>
+                            <span v-for="(parameter, key, idx) in product.parameters" :key="key">
+                                <span v-if="idx === 0">{{key | capitalize}} </span> 
+                                <span v-else>, {{key}}</span>  
+                                {{parameter}} 
+                            </span> 
+                        </p>
+                        <hr>
+                    </article>
+                    <div class="product__cost-block">
+                        <strong>{{product.cost | currency('руб.')}}</strong>
+                        <img class="product__cart-img" src="../assets/catalog-images/cartsvg.png"></img>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="production">
+            <figure class="production-video">
+                <img src="../assets/catalog-images/videodesktop.png"/>
+            </figure>
+            <div class="production-desc">
+                <img src="../assets/catalog-images/videosvg.png"/>
                 <article>
-                    <h4><strong>{{product.name}}</strong></h4>
+                    <h4><strong>Процесс производства</strong></h4>
                     <p>
-                        <span v-for="(parameter, key) in product.parameters" :key="key">{{key}} {{parameter}} </span> 
+                        По просьбам наших любимых фоловеров мы сняли подробное видео о том, как появляются наши товары. 
                     </p>
-                    <hr>
                 </article>
-            </section>
+                <h5 class="make-order">
+                    <strong>СДЕЛАТЬ ЗАКАЗ</strong>
+                </h5>
+            </div>
         </div>
     </div>
 </template>
@@ -30,34 +57,75 @@ export default {
             var capitalFirst = value.charAt(0).toUpperCase() 
             var noCaseTail = value.slice(1, value.length) 
             return capitalFirst + noCaseTail;
+        },
+        currency(amount, symbol) {
+            return `${amount} ${symbol}`;
         }
+
     }
 }
 </script>
 
 <style scoped>
 
-.products {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 100px; 
-    margin-bottom: 50px;
+.catalog-main {
+    padding: 50px;
+    margin: 50px 0;
 }
 
-.products-item {
+.products-list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.product {
     display: flex;
     flex-direction: column;
 }
 
-.product-item__description {
+.product__desc {
     padding: 20px;
     display: flex;
     flex-direction: column;
 }
 
+.product__cost-block {
+    display: flex;
+}
+
+.product__cart-img {
+  max-height: 25px;
+  position: relative;
+  display: inline-block;
+  margin-left: auto;
+}
+
+.production {
+    display: flex;
+}
+
+.production-desc {
+    flex-direction: column;
+    padding: 90px;
+}
+
+.camera-img {
+    height: 25px;
+}
+
+.production-video {
+	width: 682px;
+	height: 455px;
+}
+
+.make-order {
+    text-align: center;
+    margin: 75px 0;
+}
+
 hr {
-    font-weight: 2px;
-    background-color: black;
+    border: 0.5px solid black;
 }
 
 </style>

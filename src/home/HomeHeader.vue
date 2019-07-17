@@ -52,7 +52,7 @@ h1 {
     position: absolute;
     width: 100%;
     height: 34px;
-    background: url("../assets/catalog-images/zigzagfilldesktopsvg.png") repeat-x ;
+    background: url("../assets/catalog-images/zigzagfilldesktopsvg.png");
     bottom: 0;
     left: 0;
 }
