@@ -2,7 +2,7 @@
     <div class="catalog-main">
         <div class="products">
             <div v-for="(product, idx) in availibleProducts" :key="idx" class="products-item">
-                <img :src="product.src"/>
+                <img class="products-item__img" :src="product.src"/>
                 <section class="products-item__desc">
                     <article>
                         <h4><strong>{{product.name}}</strong></h4>
@@ -21,18 +21,19 @@
             </div>
         </div>
         <div class="production">
-            <figure class="production__video">
-                <img src="../assets/catalog-images/videodesktop.png"/>
-            </figure>
+            <div class="production__video">
+                <img class="production__video-play" src="../assets/catalog-images/playsvg.png"/>
+                 <img class="production__video-img" src="../assets/catalog-images/videodesktop.png"/>
+            </div>
             <div class="production__desc">
                 <img src="../assets/catalog-images/videosvg.png"/>
                 <article>
-                    <h4><strong>Процесс производства</strong></h4>
-                    <p>
-                        По просьбам наших любимых фоловеров мы сняли подробное видео о том, как появляются наши товары. 
+                    <h3><strong>Процесс производства</strong></h3>
+                    <p class="production__desc-paragraph">
+                        По просьбам наших любимых фоловеров мы сняли для вас подробное видео о том, как появляются наши товары. 
                     </p>
                 </article>
-                <h5 class="make-order">СДЕЛАТЬ ЗАКАЗ</h5>
+                <div class="production__make-order">сделать заказ</div>
             </div>
         </div>
     </div>
@@ -71,12 +72,18 @@ export default {
 
 .products{
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
+    justify-content: space-around;
+    margin-bottom: 20px;
 }
 
+.products-item__img {
+    margin: 0 auto;
+}
+
+
 .products-item__desc {
-    padding: 20px;
+    max-width: 315px;
+    padding: 35px;
 }
 
 .products-item__desc-params::first-letter {
@@ -99,18 +106,36 @@ export default {
 }
 
 .production__desc {
-    flex-direction: column;
     padding: 90px;
 }
 
 .production__video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
 	width: 682px;
 	height: 455px;
 }
 
-.make-order {
-    text-align: center;
-    margin: 75px 0;
+.production__video-img {
+    position: absolute;
+}
+
+.production__video-play {
+    z-index: 1;
+    max-height: 78px;
+}
+
+.production__desc-paragraph {
+    margin: 30px 0;
+    line-height: 190%;
+}
+
+.production__make-order {
+    text-transform: uppercase;
+    text-align:center;
+    margin: 0 auto;
     font-weight: bold;
 }
 

@@ -109,10 +109,14 @@ body, #app {
 }
 
 .nav-link {
-  display: inline-block;
   text-decoration: none;
   color: inherit;
   margin: 0 30px;
+}
+
+.nav-link:hover,  .nav-link:focus {
+    text-decoration: none;
+    color: inherit;
 }
 
 .nav-item__text-outer {
