@@ -55,6 +55,7 @@
           <img src="./assets/catalog-images/htmlacademysvg.png"/>
         </div>
     </footer>
+    
   </div>
 </template>
 
@@ -177,5 +178,7 @@ body, #app {
   font-weight: bold;
   margin-right: 25px; 
 }
+
+
 
 </style>

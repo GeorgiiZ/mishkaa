@@ -1,29 +1,15 @@
 <template>
     <div class="catalog-main">
         <div class="products">
-            <div v-for="(product, idx) in availibleProducts" :key="idx" class="products-item">
-                <img class="products-item__img" :src="product.src"/>
-                <section class="products-item__desc">
-                    <article>
-                        <h4><strong>{{product.name}}</strong></h4>
-                        <p class="products-item__desc-params">
-                            <span v-for="(parameter, key) in product.parameters" :key="key">
-                                 {{key}} {{parameter}},  
-                            </span> 
-                        </p>
-                        <hr>
-                    </article>
-                    <div class="products-item__cost">
-                        <strong>{{product.cost | currency('руб.')}}</strong>
-                        <img class="products-item__cart" src="../assets/catalog-images/cartsvg.png"/>
-                    </div>
-                </section>
-            </div>
+            <ProductCard v-for = "(product, key) in availibleProducts" :key="key" 
+                         :product = "product"
+                         @basketClicked = "onModalWindow(product)">
+            </ProductCard>
         </div>
         <div class="production">
             <div class="production__video">
                 <img class="production__video-play" src="../assets/catalog-images/playsvg.png"/>
-                 <img class="production__video-img" src="../assets/catalog-images/videodesktop.png"/>
+                <img class="production__video-img" src="../assets/catalog-images/videodesktop.png"/>
             </div>
             <div class="production__desc">
                 <img src="../assets/catalog-images/videosvg.png"/>
@@ -36,17 +22,57 @@
                 <div class="production__make-order">сделать заказ</div>
             </div>
         </div>
+        <div class="modal-window" v-show="isModalOpened">
+            <article class="modal-window__content">
+                <span class="modal-window__close" @click="isModalOpened = false;">&times;</span>
+                <span class="modal-window__header">добавить в корзину</span>
+                <p class="modal-window__paragraph">Выберите размер:</p>
+                <div class="modal-window__selection">
+                    <label class="modal-window__selection-item">
+                        <input type="radio"  value="S" v-model="productSize" class="custom-radio"> S
+                    </label>
+                    <label class="modal-window__selection-item">
+                        <input type="radio"  value="M" v-model="productSize" class="custom-radio"> M
+                    </label>
+                    <label class="modal-window__selection-item">
+                        <input type="radio"  value="L" v-model="productSize" class="custom-radio"> L
+                    </label>
+                </div>
+            </article>
+        </div>
     </div>
 </template>
 
 <script>
 import availibleProducts from '../api/products';
+import ProductCard from './ProductCard.vue';
 
 export default {
     name: "CatalogPage",
+    components: {
+        ProductCard,
+    },
     data(){
         return {
             availibleProducts,
+            modalOpened: true,
+            productSize: 'S',
+        }
+    },
+    computed: {
+        isModalOpened: {
+            get: function() {
+                return this.modalOpened;
+            },
+            set: function(value) {
+                this.modalOpened = value;
+            }
+            
+        }
+    },
+    methods:{
+        onModalWindow(product){
+            this.modalOpened=!this.modalOpened;
         }
     },
     filters: {
@@ -59,7 +85,7 @@ export default {
             return `${amount} ${symbol}`;
         }
 
-    }
+    },
 }
 </script>
 
@@ -74,31 +100,6 @@ export default {
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
-}
-
-.products-item__img {
-    margin: 0 auto;
-}
-
-
-.products-item__desc {
-    max-width: 315px;
-    padding: 35px;
-}
-
-.products-item__desc-params::first-letter {
-    text-transform: capitalize; 
-}
-
-.products-item__cost {
-    display: flex;
-}
-
-.products-item__cart {
-  max-height: 25px;
-  position: relative;
-  display: inline-block;
-  margin-left: auto;
 }
 
 .production {
@@ -142,5 +143,74 @@ export default {
 hr {
     border: 0.5px solid black;
 }
+
+.modal-window {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:blanchedalmond;
+    margin: 0 auto;
+    z-index: 2;
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-window__content {
+    position: relative;
+    padding: 30px;
+    text-align: center;
+    height: 300px;
+    width: 500px;
+    background-color: white;
+}
+
+.modal-window__header {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+.modal-window__paragraph {
+    font-size: 1.5rem;
+    margin-top: 25px;
+}
+
+
+.modal-window__selection {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.modal-window__selection-item {
+    margin: 0 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.modal-window__close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #aaaaaa;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 20px  25px;
+}
+
+.modal-window__close:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.custom-radio {
+    display: none
+}
+
 
 </style>
