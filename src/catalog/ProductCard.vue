@@ -3,16 +3,12 @@
         <img class="product__img" :src="product.src"/>
         <article class="product__desc">
             <h4><strong>{{product.name}}</strong></h4>
-            <div class="product__desc-params">
-                <span v-if="product.height">длинна {{product.height | suffix(' см.')}}, </span>
-                <span v-if="product.weight">вес {{product.height | suffix(' г.')}}, </span>
-                <span v-if="product.diameter">диаметр {{product.diameter | suffix(' см.')}}, </span>
-            </div>
+            <span>{{ product | getParams }}</span>
         </article>
         <div class="product__buy">
             <hr>
             <div class="product__buy-cost">
-                <strong>{{product.cost | suffix('руб.')}}</strong>
+                <strong>{{product.cost}} руб.</strong>
                 <img class="product__buy-basket" 
                      src="../assets/catalog-images/cartsvg.png"
                      @click="basketClick()"/>
@@ -30,17 +26,22 @@ export default {
             required: true,
         }
     },
-    filters: {
-        suffix(amount, symbol) {
-            return `${amount} ${symbol}`;
-        }
-
-    },
     methods: {
         basketClick() {
             this.$emit('basketClicked', this.product);
         }
-    }
+    },
+    filters: {
+        getParams(product) {
+            var height =  product.height ? `высота ${product.height} см, ` : '';
+            var weight = product.weight ? `вес ${product.weight} г, ` : '';
+            var diameter = product.diameter ? `диаметр ${product.diameter} см, ` : '';
+
+            var resStr = diameter + height + weight;
+            var firstLetter = resStr[0].toUpperCase();
+            return firstLetter + resStr.slice(1, resStr.length - 2);
+        }
+    },
 }
 </script>
 
@@ -61,14 +62,6 @@ export default {
     padding: 30px 30px 0px 30px;
 }
 
-.product__desc-params {
-    display: inline;
-}
-
-.product__desc-params::first-letter {
-    text-transform: capitalize; 
-}
-
 .product__buy {
     padding: 0 30px 30px 30px;
     margin-top: auto
@@ -83,6 +76,10 @@ export default {
   position: relative;
   display: inline-block;
   margin-left: auto;
+}
+
+.product__buy-basket:hover {
+    cursor: pointer;
 }
 
 hr {

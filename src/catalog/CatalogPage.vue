@@ -22,12 +22,12 @@
                 <div class="production__make-order">сделать заказ</div>
             </div>
         </div>
-        <div class="modal-window" v-show="isModalOpened">
+        <div class="modal-window" v-if="isModalOpened">
             <article class="modal-window__content">
                 <span class="modal-window__close" @click="isModalOpened = false;">&times;</span>
                 <span class="modal-window__header">добавить в корзину</span>
                 <p class="modal-window__paragraph">Выберите размер:</p>
-                <div class="modal-window__selection">
+                <div class="modal-window__selection" @change="saveToBasket()">
                     <label class="modal-window__selection-item">
                         <input type="radio"  value="S" v-model="productSize" class="custom-radio"> S
                     </label>
@@ -55,8 +55,9 @@ export default {
     data(){
         return {
             availibleProducts,
-            modalOpened: true,
-            productSize: 'S',
+            modalOpened: false,
+            selectedProduct: {},
+            productSize: null,
         }
     },
     computed: {
@@ -72,7 +73,15 @@ export default {
     },
     methods:{
         onModalWindow(product){
-            this.modalOpened=!this.modalOpened;
+            this.selectedProduct = product;
+            this.isModalOpened = true;
+        },
+        saveToBasket() {
+            const product = this.selectedProduct;
+            const size = this.productSize;
+            this.$store.commit('addProductToBasket', Object.assign( {}, product, {size} ));
+            this.isModalOpened = false;
+            this.productSize = null;
         }
     },
     filters: {
@@ -84,7 +93,6 @@ export default {
         currency(amount, symbol) {
             return `${amount} ${symbol}`;
         }
-
     },
 }
 </script>
@@ -98,7 +106,7 @@ export default {
 
 .products{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom: 20px;
 }
 
@@ -153,7 +161,6 @@ hr {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color:blanchedalmond;
     margin: 0 auto;
     z-index: 2;
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
@@ -191,6 +198,10 @@ hr {
     margin: 0 30px;
     font-size: 18px;
     font-weight: bold;
+}
+
+.modal-window__selection-item:hover {
+    cursor: pointer;
 }
 
 .modal-window__close {

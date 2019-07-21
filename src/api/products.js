@@ -6,22 +6,24 @@ const products = [
         name: "Зайчик попрыгайчик",
         height: "30",
         weight: "200",
-        cost: "1200"
+        cost: "1200",
+        size:"",
     }, 
     {
         src: images("./photo2desktop.png"),
         name: "Корзинка для белья",
         height: "10",
         diameter: "15",
-        cost: "690"
+        cost: "690",
+        size:"",
     }, 
     {
         src: images("./photo3desktop.png"),
         name: "Большая корзинка для игрушек",
         height: "30",
         diameter: "30",
-        cost: "1500"
-    
+        cost: "1500",
+        size:"",
     }, 
 ];
 

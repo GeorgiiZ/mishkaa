@@ -28,7 +28,7 @@
               <li class="nav-item col-sm-3" style="border-right: none;">
                 <img class="nav-item__img-cart" src="./assets/catalog-images/cartsvg.png"/>
                 <router-link class="nav-link" to="/">
-                  Корзина: {{cartState}}
+                  Корзина: {{basket.length | goodsFilter}}
                 </router-link>
                 <div class="nav-item__text-outer" style="font-weight: lighter;">
                   Бесплатная доставка по России
@@ -67,13 +67,28 @@ export default {
   data(){
     return { 
       logoTop: '',
-      logoBottom: '',
-      cartState: 'пока пуста',
+      logoBottom: ''
     };
   },
   computed: {
-
+    basket(){
+      return this.$store.state.basket;
+    }
+  },
+  filters: {
+    goodsFilter(amount) {
+      var captions =  [
+        'корзина пуста', 
+        `${amount} товар`, 
+        `${amount} товара`, 
+        `${amount} товара`, 
+        `${amount} товара`,
+        `${amount} товаров`];
+      const idx = Math.min(amount, captions.length-1);
+      return captions[idx];
+    }
   }
+
 }
 </script>
 
