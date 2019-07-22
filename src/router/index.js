@@ -3,8 +3,12 @@ import Router from 'vue-router';
 
 import CatalogHeader from '../catalog/CatalogHeader';
 import CatalogPage from '../catalog/CatalogPage';
+
 import HomePage from '../home/HomePage';
 import HomeHeader from '../home/HomeHeader';
+
+import FormHeader from '../form/FormHeader';
+import FormPage from '../form/FormPage';
 
 
 Vue.use(Router);
@@ -26,6 +30,14 @@ export default new Router({
             components: {
                 header: CatalogHeader,
                 default: CatalogPage,
+            },
+        },
+        {
+            path:'/form',
+            name: 'Form',
+            components: {
+                header: FormHeader,
+                default: FormPage,
             },
         }]
 })

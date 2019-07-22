@@ -12,7 +12,7 @@
                   </div>
               </li>
               <li class="nav-item col-sm-6">
-                <router-link class="nav-link" to="">
+                <router-link class="nav-link" :to="{name: 'Form'}">
                   Вязание на заказ
                 </router-link>
                 <router-link class = "nav-item_centered" to="/">
@@ -99,7 +99,7 @@ body, #app {
 }
 
 #app {
-  font-family: Open, sans;
+  font-family: Open Sans;
   height: 100%;
   display: flex;
   flex-direction: column;
