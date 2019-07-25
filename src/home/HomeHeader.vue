@@ -1,9 +1,6 @@
 <template>
     <section class="home-header">
-        <div class="home-header__title">
-            <h1>{{message}}</h1>
-        </div>
-        <img class='home-header__image' src="../assets/index-images/herodesktopjpg.png"/>
+        <div class="home-header__title">{{message}}</div>
     </section>
 </template>
 
@@ -12,7 +9,7 @@ export default {
     name: "HomeHeader",
     data() {
         return {
-            message: "Милые штуки ручной работы",        
+            message: "Милые штуки ручной работы для дома",        
         }
     },
 }
@@ -27,6 +24,7 @@ export default {
     display: flex;
     justify-content: center;
     height: 700px;
+    background-image: url("../assets/index-images/herodesktopjpg.png");
 }
 
 .home-header__image{
@@ -38,7 +36,12 @@ export default {
 }
 
 .home-header__title {
-    margin-top: 100px;
+    font-size: var(--text-size__large);
+    font-weight: bold;
+    max-width: 50%;
+    line-height: 100%;
+    text-align: center;
+    margin-top: 150px; 
     z-index: 1;
 }
  

@@ -196,7 +196,7 @@ hr {
 
 .modal-window__selection-item {
     margin: 0 30px;
-    font-size: 18px;
+    font-size: var(--text-size__middle);
     font-weight: bold;
 }
 
@@ -222,6 +222,5 @@ hr {
 .custom-radio {
     display: none
 }
-
 
 </style>

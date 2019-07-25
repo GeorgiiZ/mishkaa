@@ -1,12 +1,12 @@
 <template>
-    <div class="grey contain">
-        <h1>{{message}}</h1>
+    <div class="form-header">
+        <span class="form-header__title">{{message}}</span>
     </div>
 </template>
 
 <script>
 export default {
-    name: "CatalogHeader",
+    name: "FormHeader",
     data() {
         return {
             message: "Вязание на заказ",        
@@ -15,22 +15,32 @@ export default {
 }
 </script>
 
-
-
 <style scoped>
 
-h1 {
-    margin: 100px;
-    font-weight: bold;
-}
-
-.contain {
+.form-header {
+    position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 255px;
+    margin: auto 0;
 }
 
-.grey {
-    background-color: lightgray;
+.form-header__title {
+    z-index: 1;
+    font-weight: bold;
+    font-size: var(--text-size__large);
+}
+
+
+.form-header::after {
+    content: '';
+    position: absolute;
+    width: 1150px;
+	height: 34px;
+    background: url("../assets/catalog-images/zigzagfilldesktopsvg.png");
+    bottom: 0;
+    left: 0;
 }
 
 </style>

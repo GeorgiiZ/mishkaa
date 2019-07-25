@@ -4,33 +4,42 @@
         <nav>
             <ul class="nav-main">
               <li class="nav-item col-sm-2">
-                  <router-link class="nav-link" :to="{name: 'Catalog'}" exact>
+                  <router-link class = "nav-item__link nav-item_indent"
+                              :to ="{name: 'Catalog'}" exact >
                       Каталог товаров
                   </router-link>
-                  <div class="nav-item__text-outer">  
+                  <div class="nav-item__text-outer 
+                              nav-item_indent">  
                     Новые поступления
                   </div>
               </li>
               <li class="nav-item col-sm-6">
-                <router-link class="nav-link" :to="{name: 'Form'}">
+                <router-link class = "nav-item__link nav-item_indent" 
+                            :to="{name: 'Form'}">
                   Вязание на заказ
                 </router-link>
-                <router-link class = "nav-item_centered" to="/">
+                <router-link class = "nav-item_centered" 
+                             to="/">
                   <img src="./assets/catalog-images/mishkalogodesktopsvg.png"/>
                 </router-link>
-                <div class="nav-item__text-outer">
+                <div class="nav-item__text-outer
+                            nav-item_indent">
                   Распродажа
                 </div>
               </li>
               <li class="nav-item col-sm-1"> 
-                <img class="nav-item_centered" src="./assets/catalog-images/searchsvg.png"/>
+                <img class="nav-item_centered" 
+                     src="./assets/catalog-images/searchsvg.png"/>
               </li>
               <li class="nav-item col-sm-3" style="border-right: none;">
                 <img class="nav-item__img-cart" src="./assets/catalog-images/cartsvg.png"/>
-                <router-link class="nav-link" to="/">
+                <router-link  to="/" class="nav-item__link 
+                                            nav-item_indent">
                   Корзина: {{basket.length | goodsFilter}}
                 </router-link>
-                <div class="nav-item__text-outer" style="font-weight: lighter;">
+                <div class="nav-item__text-outer" 
+                     style="font-weight: lighter;
+                            margin-left: 25px;">
                   Бесплатная доставка по России
                 </div>
               </li>
@@ -99,6 +108,9 @@ body, #app {
 }
 
 #app {
+  --text-size__large: 50px;
+  --text-size__middle: 20px;
+  --text-size__low: 17px;
   font-family: Open Sans;
   height: 100%;
   display: flex;
@@ -115,7 +127,7 @@ body, #app {
 
 .nav-item {
   font-weight: bold;
-  font-size: 16px;
+  font-size: var(--text-size__middle);
   position: relative;
   display: flex;
   align-items: center;
@@ -124,11 +136,16 @@ body, #app {
   border-bottom: 1px solid #F5F5F5;
 }
 
-.nav-link {
+.nav-item_indent {
+  margin-left:  50px;
+  margin-right: 15px;
+}
+
+.nav-item__link {
   text-decoration: none;
   color: inherit;
-  margin: 0 30px;
 }
+
 
 .nav-link:hover,  .nav-link:focus {
     text-decoration: none;
@@ -136,11 +153,10 @@ body, #app {
 }
 
 .nav-item__text-outer {
-  font-size: 14px;
+  font-size: var(--text-size__low);
   font-weight: bold;
   position: absolute;
   top: 100px;
-  margin: 30px;
   z-index: 1;
 }
 

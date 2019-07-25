@@ -29,7 +29,7 @@ export default {
 .catalog-header__title {
     z-index: 1;
     font-weight: bold;
-    font-size: 50px;
+    font-size: var(--text-size__large);
 }
 
 

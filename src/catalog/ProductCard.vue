@@ -2,7 +2,7 @@
     <div class="product">
         <img class="product__img" :src="product.src"/>
         <article class="product__desc">
-            <h4><strong>{{product.name}}</strong></h4>
+            <span class="product__desc-name" ><strong>{{product.name}}</strong></span>
             <span>{{ product | getParams }}</span>
         </article>
         <div class="product__buy">
@@ -48,6 +48,7 @@ export default {
 <style>
 
 .product {
+    font-size: var(--text-size__low);
     display: flex;
     flex-direction: column;
 }
@@ -60,6 +61,11 @@ export default {
 .product__desc {
     max-width: 315px;
     padding: 30px 30px 0px 30px;
+}
+
+.product__desc-name {
+    font-size: var(--text-size__middle);
+    display: block;
 }
 
 .product__buy {

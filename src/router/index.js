@@ -7,8 +7,8 @@ import CatalogPage from '../catalog/CatalogPage';
 import HomePage from '../home/HomePage';
 import HomeHeader from '../home/HomeHeader';
 
-import FormHeader from '../form/FormHeader';
-import FormPage from '../form/FormPage';
+import FormHeader from '../mishka-form/FormHeader';
+import FormPage from '../mishka-form/FormPage';
 
 
 Vue.use(Router);
