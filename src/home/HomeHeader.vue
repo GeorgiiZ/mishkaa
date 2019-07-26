@@ -38,7 +38,7 @@ export default {
 .home-header__title {
     font-size: var(--text-size__large);
     font-weight: bold;
-    max-width: 50%;
+    max-width: 60%;
     line-height: 100%;
     text-align: center;
     margin-top: 150px; 

@@ -4,7 +4,8 @@
         <nav>
             <ul class="nav-main">
               <li class="nav-item col-sm-2">
-                  <router-link class = "nav-item__link nav-item_indent"
+                  <router-link class = "nav-item__link 
+                                        nav-item_indent"
                               :to ="{name: 'Catalog'}" exact >
                       Каталог товаров
                   </router-link>
@@ -14,7 +15,8 @@
                   </div>
               </li>
               <li class="nav-item col-sm-6">
-                <router-link class = "nav-item__link nav-item_indent" 
+                <router-link class = "nav-item__link 
+                                      nav-item_indent" 
                             :to="{name: 'Form'}">
                   Вязание на заказ
                 </router-link>
@@ -37,9 +39,8 @@
                                             nav-item_indent">
                   Корзина: {{basket.length | goodsFilter}}
                 </router-link>
-                <div class="nav-item__text-outer" 
-                     style="font-weight: lighter;
-                            margin-left: 25px;">
+                <div class="nav-item__text-outer
+                            nav-item_last">
                   Бесплатная доставка по России
                 </div>
               </li>
@@ -97,7 +98,6 @@ export default {
       return captions[idx];
     }
   }
-
 }
 </script>
 
@@ -107,15 +107,40 @@ body, #app {
     background-color: white;
 }
 
+@font-face {
+  font-family: 'Open_Sans';
+  src: url(fonts/Open-Sans/OpenSans-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open_Sans';
+  src: url(fonts/Open-Sans/OpenSans-Bold.ttf);
+  font-weight: bold;
+  font-style: normal;
+}
+
 #app {
   --text-size__large: 50px;
-  --text-size__middle: 20px;
-  --text-size__low: 17px;
-  font-family: Open Sans;
+  --text-size__regular: 16px;
+  --text-size__light: 14px;
+  --line-height__paragraph: 200%;
+  font-family: Open_Sans;
+  line-height: 150%;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
+
+p {
+  line-height: var(--line-height__paragraph);
+  font-size: var(--text-size__light);
+}
+
+</style>
+
+<style scoped>
 
 .nav-main {
   width: 1150px;
@@ -127,7 +152,7 @@ body, #app {
 
 .nav-item {
   font-weight: bold;
-  font-size: var(--text-size__middle);
+  font-size: var(--text-size__regular);
   position: relative;
   display: flex;
   align-items: center;
@@ -138,7 +163,11 @@ body, #app {
 
 .nav-item_indent {
   margin-left:  50px;
-  margin-right: 15px;
+  margin-right: 10px;
+}
+
+.nav-item_last {
+  margin-left: 25px;
 }
 
 .nav-item__link {
@@ -153,7 +182,7 @@ body, #app {
 }
 
 .nav-item__text-outer {
-  font-size: var(--text-size__low);
+  font-size: var(--text-size__light);
   font-weight: bold;
   position: absolute;
   top: 100px;
@@ -205,11 +234,9 @@ body, #app {
 }
 
 .footer-main__develop-capture {
-  font-size: 20px;
+  font-size: var(--text-size__regular);
   font-weight: bold;
   margin-right: 25px; 
 }
-
-
 
 </style>

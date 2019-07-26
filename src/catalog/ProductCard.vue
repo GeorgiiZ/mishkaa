@@ -48,7 +48,7 @@ export default {
 <style>
 
 .product {
-    font-size: var(--text-size__low);
+    font-size: var(--text-size__light);
     display: flex;
     flex-direction: column;
 }
@@ -61,10 +61,11 @@ export default {
 .product__desc {
     max-width: 315px;
     padding: 30px 30px 0px 30px;
+    line-height: var(--line-height__paragraph);
 }
 
 .product__desc-name {
-    font-size: var(--text-size__middle);
+    font-size: var(--text-size__regular);
     display: block;
 }
 

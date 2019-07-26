@@ -38,12 +38,6 @@
                     <input type="checkbox" checked id="test_checkbox"/>dddd</input>
                 </div>
             </div>
-            <div class="customer-contacts">
-                
-            </div>
-            <div class="add-wishes">
-                
-            </div>
         </form>
     </div>
 </template>
@@ -76,7 +70,7 @@ export default {
 .form-container {
     display: flex;
     flex-direction: column;
-    font-size: var(--text-size__middle);
+    font-size: var(--text-size__regular);
 }
 
 .info-container {
@@ -85,7 +79,7 @@ export default {
 }
 
 .info-paragraph {
-    font-size: var(--text-size__low);
+    font-size: var(--text-size__light);
     font-weight: lighter;
     margin: 0px 135px;
 }
@@ -98,7 +92,6 @@ export default {
 
 .form-section {
     display: flex;
-    margin-top: 50px;
     max-height: 250px;
     padding: 50px 100px;
 }
@@ -110,7 +103,7 @@ export default {
 }
 
 .controls-label {
-    margin: 0 0px 35px 100px;
+    margin: 0 0px 50px 100px;
 }
 
 
@@ -119,17 +112,14 @@ export default {
     border-top: solid 2px turquoise;
 }
 
-label {
-    display: flex;
-}
-
 input[type="checkbox"] {
     margin-right: 25px;
 }
 
-input[type="checkbox"]::before{
-    content: url("../assets/form-images/VectorSmartObjectcop.png");
-    margin-right: 15px;
+label input[type="checkbox"]:checked {
+    color: aqua;
+    /* content: url("../assets/form-images/VectorSmartObjectcop.png");
+    margin-right: 15px; */
 }
 
 </style>
