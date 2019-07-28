@@ -23,7 +23,7 @@
             </div>
         </div>
         <ModalDialog v-show="isModalOpened"
-                     @windowClosed ="() => isModalOpened = false" 
+                     @onClosed ="() => isModalOpened = false" 
                      :selectedProduct ="selectedProduct"/>
     </div>
 </template>
@@ -51,16 +51,6 @@ export default {
             this.selectedProduct = product;
             this.isModalOpened = true;
         },
-    },
-    filters: {
-        capitalize(value){
-            var capitalFirst = value.charAt(0).toUpperCase() 
-            var noCaseTail = value.slice(1, value.length) 
-            return capitalFirst + noCaseTail;
-        },
-        currency(amount, symbol) {
-            return `${amount} ${symbol}`;
-        }
     },
 }
 </script>

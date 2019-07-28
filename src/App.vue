@@ -74,12 +74,6 @@ export default {
   name: 'app',
   components: {
   },
-  data(){
-    return { 
-      logoTop: '',
-      logoBottom: ''
-    };
-  },
   computed: {
     basket(){
       return this.$store.state.basket;
@@ -230,7 +224,7 @@ p {
 
 .footer-main__develop {
   display: flex;
-  align-content: center;
+  align-items: center;
 }
 
 .footer-main__develop-capture {

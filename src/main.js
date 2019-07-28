@@ -6,6 +6,9 @@ Vue.config.productionTip = false
 
 import router from './router';
 import store from './store';
+import capitalizeFilter from './shared/capitalize-filter';
+
+Vue.filter('capitalize', capitalizeFilter);
 
 new Vue({
   render: h => h(App),

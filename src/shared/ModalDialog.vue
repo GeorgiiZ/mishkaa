@@ -1,7 +1,7 @@
 <template>
      <div class="modal-window">
             <article class="modal-window__content">
-                <span class="modal-window__close" @click="windowClosed()">&times;</span>
+                <span class="modal-window__close" @click="onClosed()">&times;</span>
                 <span class="modal-window__header">добавить в корзину</span>
                 <p class="modal-window__paragraph">Выберите размер:</p>
                 <div class="modal-window__selection" @change="saveToBasket()">
@@ -38,10 +38,10 @@ export default {
             const size = this.productSize;
             this.$store.commit('addProductToBasket', Object.assign( {}, product, {size} ));
             this.productSize = null;
-            this.windowClosed();
+            this.onClosed();
         },
-        windowClosed() {
-            this.$emit('windowClosed');
+        onClosed() {
+            this.$emit('onClosed');
         }
     }
 }
