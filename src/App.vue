@@ -60,10 +60,10 @@
           <img class="footer-main__social-img" src="./assets/catalog-images/fbsvg.png"/>
           <img class="footer-main__social-img" src="./assets/catalog-images/twittersvg.png"/>
         </div>
-        <div class="footer-main__develop">
+        <a class="footer-main__develop" target="_blank" href="https://htmlacademy.ru/intensive/adaptive">
           <span class="footer-main__develop-capture">Разработано</span>
           <img src="./assets/catalog-images/htmlacademysvg.png"/>
-        </div>
+        </a>
     </footer>
     
   </div>
@@ -164,16 +164,16 @@ p {
   margin-left: 25px;
 }
 
-.nav-item__link {
+.nav-item__link, a {
   text-decoration: none;
   color: inherit;
 }
 
 
-.nav-link:hover,  .nav-link:focus {
+/* .nav-item__link:hover,  .nav-item__link:focus {
     text-decoration: none;
     color: inherit;
-}
+} */
 
 .nav-item__text-outer {
   font-size: var(--text-size__light);
@@ -223,8 +223,7 @@ p {
 }
 
 .footer-main__develop {
-  display: flex;
-  align-items: center;
+  display: inline-block;
 }
 
 .footer-main__develop-capture {

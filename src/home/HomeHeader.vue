@@ -39,7 +39,7 @@ export default {
     font-size: var(--text-size__large);
     font-weight: bold;
     max-width: 60%;
-    line-height: 100%;
+    line-height: 120%;
     text-align: center;
     margin-top: 150px; 
     z-index: 1;
