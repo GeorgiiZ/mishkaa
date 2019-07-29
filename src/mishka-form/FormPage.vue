@@ -2,13 +2,13 @@
     <div class = "form-container">
         <form method="GET" action="#">
             <div class="form-section">
-                <p class="form-section__paragraph">
+                <p class="initial-info">
                     Мы будем рады воплотить в жизнь ваши пожелания! Заполните форму заказа и мы свяжемся с вами, чтобы уточнить детали.
                 </p>
             </div>
             <div class="form-section">
                 <span class="form-section__caption">тип</span>
-                <div class="controls_wraped">
+                <div class="controls">
                     <label class="controls__item">
                         <input type="radio" name="selectedKind" v-model="selectedKind" value="toy" required>
                          <span class="controls__item_indent">Аксессуар для интерьера</span>
@@ -23,7 +23,8 @@
                         form-section_highlighted
                         form-section_height-limited">
                 <span class="form-section__caption">цвет</span>
-                <div class="controls_wraped">
+                <div class="controls
+                            controls_wraped">
                     <div v-for="(color, key) in availibleColors" :key="key" class="controls__item" > 
                         <label>
                             <input type="checkbox" name="selectedColor"  :value = "key" v-model="selectedColors"> 
@@ -34,7 +35,7 @@
             </div>
             <div class="form-section">
                 <span class="form-section__caption">фио</span>
-                <div class="controls_wraped">
+                <div class="controls">
                     <div class="controls__item">
                         <label  for="fistName">Имя:</label>
                         <input type="text" id="fistName" name="fistName" class="form-input controls__item_indent"
@@ -55,30 +56,33 @@
             <div class="form-section 
                         form-section_column
                         form-section_highlighted">
-                <div class="controls_inline">
-                    <label class="form-section__caption" for="customerPhoneNumber">тел</label>
-                    <input type="tel" id="customerPhoneNumber" name="customerPhoneNumber" class="form-input form-input_large"
-                           v-model.trim="customerPhoneNumber" placeholder="+7 XXX-XXX-XXXX" autocomplete="off" required/>
+                <div class="controls_inline" id="phoneNumberContainer" >
+                    <label class="form-section__caption" for="phoneNumber">тел</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" class="form-input form-input_large"
+                           v-model.trim="phoneNumber" placeholder="+7 XXX-XXX-XXXX" autocomplete="off" required/>
                 </div>
-                <div class="controls_inline">
-                    <label class="form-section__caption" for="customerEmail">E-mail</label>
-                    <input type="email" id="customerEmail" name="customerEmail" class="form-input form-input_large"
-                           v-model.trim="customerEmail" placeholder="Ваш Email*" autocomplete="off" required/>
+                <div class="controls_inline" id="emailContainer">
+                    <label class="form-section__caption" for="email">E-mail</label>
+                    <input type="email" id="email" name="email" class="form-input form-input_large"
+                           v-model.trim="email" placeholder="Ваш Email*" autocomplete="off" required/>
                 </div>
             </div>
             <div class="form-section
                         form-section_add-wishes">
                 <label class="form-section__caption" for="addWishes">доп</label>
-                <div class="controls_wraped">
-                    <textarea id="addWishes" name="customerEmail"
+                <div class="controls">
+                    <textarea id="addWishes" name="email"
                               v-model.trim="addWishes"
                               class="form-input 
                                      form-input_textarea 
                                      controls__item " 
                               placeholder="Опишите ваши пожелания к заказу*" required/>
-                    <button type="submit" 
-                            class="make-order controls__item"
+                    <div class="make-order controls__item">
+                        <button type="submit" 
+                            class="make-order__btn"
                             @click="sendOrder()">отправить заказ</button>
+                        <p class="make-order__paragraph">*Поля обязательны для заполнения</p>
+                    </div>
                 </div>
             </div>
         </form>
@@ -105,8 +109,8 @@ export default {
                 lastName:'',
                 fatherName: ''
             },
-            customerPhoneNumber:'',
-            customerEmail: '',
+            phoneNumber:'',
+            email: '',
             addWishes: ''
         }
     },
@@ -131,6 +135,11 @@ export default {
     padding: 50px 100px 0 100px;
 }
 
+.form-section_highlighted {
+    background-color: #F5F5F5;
+    border-top: solid 2px turquoise;
+}
+
 .form-section_height-limited {
     max-height: 210px;
 }
@@ -143,23 +152,29 @@ export default {
     min-height: 300px;
 }
 
-.form-section_highlighted {
-    background-color: #F5F5F5;
-    border-top: solid 2px turquoise;
+
+
+.form-section__caption {
+    color:turquoise;
+    font-weight: bold;
+    text-transform:uppercase;
+    font-size: var(--text-size__regular);
 }
 
-.form-section__paragraph {
+.initial-info {
     font-size: var(--text-size__light);
     font-weight: lighter;
     margin: 30px 135px 0 135px;
 }
 
-
-.controls_wraped {
+.controls {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
+}
+
+.controls_wraped {
+    flex-wrap: wrap;
 }
 
 .controls_inline {
@@ -186,15 +201,13 @@ export default {
     right: 0px;
 }
 
-.form-section__caption {
-    color:turquoise;
-    font-weight: bold;
-    text-transform:uppercase;
-    font-size: var(--text-size__regular);
-}
 
 .form-input {
     border : none;
+}
+
+.form-input::placeholder {
+   padding-left: 15px; 
 }
 
 .form-input_large {
@@ -205,17 +218,17 @@ export default {
     margin-right: 150px;
 }
 
-#customerPhoneNumber::after{
+
+#phoneNumberContainer::after{
+    position: absolute;
+    right: 170px;
     content: url("../assets/form-images/phonesvg.png");
 }
 
-.controls_inline::after {
+#emailContainer::after {
     position: absolute;
-    top: 0;
-    right: 0;
-    content: url("../assets/form-images/phonesvg.png");
-    font-weight: bold;
-    z-index: 1;
+    right: 170px;
+    content: url("../assets/form-images/mailsvg.png");
 }
 
 .form-input_textarea {
@@ -229,12 +242,25 @@ export default {
 }
 
 .make-order {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.make-order__btn{
+    display: inline-block;
     padding: 15px;
     max-width: 200px;
     text-transform: uppercase;
     font-weight: bold;
     background-color: transparent;
-    border: 1px dashed black;
+    border: none;
+}
+
+.make-order__paragraph {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: 250px;
 }
 
 input[type="checkbox"], input[type="radio"] {
