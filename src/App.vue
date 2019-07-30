@@ -120,6 +120,7 @@ body, #app {
   --text-size__regular: 16px;
   --text-size__light: 14px;
   --line-height__paragraph: 200%;
+  --light-grey: #F5F5F5;
   font-family: Open_Sans;
   line-height: 150%;
   height: 100%;
@@ -169,12 +170,6 @@ p {
   color: inherit;
 }
 
-
-/* .nav-item__link:hover,  .nav-item__link:focus {
-    text-decoration: none;
-    color: inherit;
-} */
-
 .nav-item__text-outer {
   font-size: var(--text-size__light);
   font-weight: bold;
@@ -198,7 +193,7 @@ p {
 }
 
 .main-content__header {
-  background-color: #F5F5F5;
+  background-color: var(--light-grey);
 }
 
 .footer-main {
@@ -206,7 +201,7 @@ p {
   margin: auto auto 0 auto; 
   padding: 50px;
   display: flex;
-  background-color: #F5F5F5;
+  background-color: var(--light-grey);
 }
 
 

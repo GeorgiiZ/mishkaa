@@ -23,7 +23,7 @@ const products = [
         height: "30",
         diameter: "30",
         cost: "1500",
-        size:"",
+        size: "",
     }, 
 ];
 
