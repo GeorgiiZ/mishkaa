@@ -63,7 +63,7 @@ export default {
     background-color:	#353839;
     margin-top: auto; 
     height: 17%;
-    width: 90%;
+    width: 85%;
 }
 
 .home-header__bottom-right {

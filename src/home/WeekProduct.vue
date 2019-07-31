@@ -1,18 +1,22 @@
 <template>
-    <div class = "week-product">
-        <span class="week-product__header">{{product.name}}</span>
+    <div class ="week-product">
+        <div class = "week-product__header">
+            <span class = "week-product__header-caption">товар недели</span>
+            <span class="week-product__header-title"> {{ product.name }} </span>
+        </div>
         <div class="week-product__card">
             <p class="week-product__card-desc">
                 {{product.description}}
             </p>
             <ul class="week-product__params">
                 <li v-for="(paramValue, key) in product.parameters" :key="key" class="week-product__param">
-                    {{ key | mapParamName}} : {{paramValue | mapUnit(key)}}
+                    {{ key | mapParamName}} : {{ paramValue | mapUnit(key) }}
                 </li>
             </ul>
             <span class="week-product__cost">Цена: {{product.cost | mapUnit('cost')}}</span>
-            <button class="week-product__order-btn">sdcfsd</button>
+            <button class="week-product__order-btn" @click="onOrderClicked">заказать</button>
         </div>
+        <img class="week-product__img" src="../assets/home-images/triplesetdesktop.png"/>
     </div>
 </template>
 
@@ -24,6 +28,11 @@ export default {
             type: Object,
             rquired: true,
         }
+    },
+    methods : {
+        onOrderClicked() {
+            this.$emit("onOrderClicked");
+        },
     },
     filters: {
         mapParamName(paramKey){
@@ -50,24 +59,41 @@ export default {
 
 <style scoped>
 
-.week-product {
+.week-product{
     display: flex;
-    flex-direction: column;   
-    max-width: 700px;
+    flex-direction: column;
+    min-height: 600px;
 }
 
-.week-product__header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    line-height: 90%;
+.week-product__header{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 100px;
+    z-index: 1;
+}
+
+.week-product__header-caption {
+    color:turquoise;
+    font-weight: bold;
+    text-transform:uppercase;
+    font-size: var(--text-size__regular);
+    text-align: center;
+    width: 70px;
+}
+
+.week-product__header-title {
     font-weight: bold;
     font-size: var(--text-size__large);
+    margin-left: 50px; 
 }
 
 .week-product__card {
-    width: 35%;
-    margin-top: 150px; 
+    position: relative;
+    margin-top: auto; 
+    margin-left: 120px;
+    max-width: 240px;
+    z-index: 1;
 }
 
 ul {
@@ -94,11 +120,22 @@ ul {
 }
 
 .week-product__order-btn {
-    margin-top: 15px; 
+    margin-top: 25px; 
     width: 100%;
     border: none;
     background-color: 	#353839;
+    color: white;
     height: 40px;
+    text-transform: uppercase;
 }
+
+.week-product__img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    margin-bottom: 100px;
+}
+
 
 </style>

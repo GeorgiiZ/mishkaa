@@ -6,7 +6,7 @@ Vue.config.productionTip = false
 
 import router from './router';
 import store from './store';
-import capitalizeFilter from './shared/capitalize-filter';
+import capitalizeFilter from './shared/filters/capitalize-filter';
 
 Vue.filter('capitalize', capitalizeFilter);
 
