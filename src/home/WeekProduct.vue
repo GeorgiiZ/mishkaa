@@ -9,8 +9,9 @@
                 {{product.description}}
             </p>
             <ul class="week-product__params">
-                <li v-for="(paramValue, key) in product.parameters" :key="key" class="week-product__param">
-                    {{ key | mapParamName}} : {{ paramValue | mapUnit(key) }}
+                <li v-for="(param, key) in product.parameters" :key="key" class="week-product__param">
+                    {{ key | mapParamName | capitalize}} : 
+                    <span class="week-product__param-unit"> {{ param | mapUnit(key) }} </span>
                 </li>
             </ul>
             <span class="week-product__cost">Цена: {{product.cost | mapUnit('cost')}}</span>
@@ -33,26 +34,6 @@ export default {
         onOrderClicked() {
             this.$emit("onOrderClicked");
         },
-    },
-    filters: {
-        mapParamName(paramKey){
-            var namesMap = {
-                color : 'Цвет',
-                diameter: 'Диаметр',
-                height: 'Высота'
-            };
-            return namesMap[paramKey];
-        },
-        mapUnit(value, key){
-            var unitsMap = {
-                color : '',
-                diameter: 'см',
-                height: 'см',
-                width: 'см',
-                cost: 'руб.'
-            }
-            return `${value} ${unitsMap[key]}`;
-        }
     },
 }
 </script>
@@ -109,6 +90,9 @@ ul {
     list-style: none;
     border-bottom: 1px solid var(--light-grey);    
     padding-bottom: 10px; 
+}
+
+.week-product__param-unit {
 }
 
 .week-product__cost {

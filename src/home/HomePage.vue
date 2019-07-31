@@ -38,7 +38,6 @@
                 </div>
                 <img class="about__review-img" src="../assets/home-images/review.png"/>      
             </div>
-
         </section>
         <ModalDialog v-show="isModalOpened"
                      @onClosed ="() => isModalOpened = false" 
@@ -80,7 +79,7 @@ export default {
     },
     computed: {
         curReview() {
-            return reviews[selectedeviewIndx];
+            return reviews[this.selectedeviewIndx];
         }
     },
     methods: {

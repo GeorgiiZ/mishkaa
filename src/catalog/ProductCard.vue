@@ -1,10 +1,12 @@
 <template>
     <div class="product">
         <img class="product__img" :src="product.src"/>
-        <article class="product__desc">
-            <span class="product__desc-name" ><strong>{{product.name}}</strong></span>
-            <span>{{ product | getParams }}</span>
-        </article>
+        <div class="product__desc">
+            <div class="product__desc-name" ><strong>{{product.name}}</strong></div>
+            <span v-for="(param, key) in product.parameters" :key="key">
+                {{ key | mapParamName }} {{ param | mapUnit(key)}},
+            </span>
+        </div>
         <div class="product__buy">
             <hr>
             <div class="product__buy-cost">
@@ -30,18 +32,7 @@ export default {
         basketClick() {
             this.$emit('basketClicked', this.product);
         }
-    },
-    filters: {
-        getParams(product) {
-            var height =  product.height ? `высота ${product.height} см, ` : '';
-            var weight = product.weight ? `вес ${product.weight} г, ` : '';
-            var diameter = product.diameter ? `диаметр ${product.diameter} см, ` : '';
-
-            var resStr = diameter + height + weight;
-            var firstLetter = resStr[0].toUpperCase();
-            return firstLetter + resStr.slice(1, resStr.length - 2);
-        }
-    },
+    }
 }
 </script>
 
@@ -66,7 +57,7 @@ export default {
 
 .product__desc-name {
     font-size: var(--text-size__regular);
-    display: block;
+    font-weight: bold;
 }
 
 .product__buy {
@@ -81,7 +72,6 @@ export default {
 .product__buy-basket {
   max-height: 25px;
   position: relative;
-  display: inline-block;
   margin-left: auto;
 }
 
