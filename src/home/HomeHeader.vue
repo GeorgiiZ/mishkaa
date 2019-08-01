@@ -32,6 +32,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 100px;
     height: 750px;
     background-image: url("../assets/home-images/herodesktopjpg.png");
 }
@@ -44,7 +45,6 @@ export default {
     line-height: 120%;
     text-align: center;
     margin-top: 150px; 
-    z-index: 1;
 }
 
 .home-header::after {
@@ -63,7 +63,7 @@ export default {
     background-color:	#353839;
     margin-top: auto; 
     height: 17%;
-    width: 85%;
+    width: 100%;
 }
 
 .home-header__bottom-right {

@@ -11,7 +11,7 @@
                 <div class="controls">
                     <label class="controls__item">
                         <input type="radio" name="selectedKind" v-model="selectedKind" value="toy" required>
-                         <span class="controls__item_indent">Аксессуар для интерьера</span>
+                        <span class="controls__item_indent">Аксессуар для интерьера</span>
                     </label>
                     <label class="controls__item">
                         <input type="radio" name="selectedKind" v-model="selectedKind" value="accessory" required>
@@ -71,7 +71,7 @@
                         form-section_add-wishes">
                 <label class="form-section__caption" for="addWishes">доп</label>
                 <div class="controls">
-                    <textarea id="addWishes" name="email"
+                    <textarea name="email"
                               v-model.trim="addWishes"
                               class="form-input 
                                      form-input_textarea 
@@ -204,10 +204,8 @@ export default {
 
 .form-input {
     border : none;
-}
-
-.form-input::placeholder {
-   padding-left: 15px; 
+    padding-left: 15px; 
+    text-overflow: ellipsis;
 }
 
 .form-input_large {
@@ -248,7 +246,6 @@ export default {
 }
 
 .make-order__btn{
-    display: inline-block;
     padding: 15px;
     max-width: 200px;
     text-transform: uppercase;
@@ -258,7 +255,6 @@ export default {
 }
 
 .make-order__paragraph {
-    display: inline-block;
     margin-left: auto;
     margin-right: 250px;
 }

@@ -5,16 +5,16 @@
             <span class="week-product__header-title"> {{ product.name }} </span>
         </div>
         <div class="week-product__card">
-            <p class="week-product__card-desc">
+            <p>
                 {{product.description}}
             </p>
             <ul class="week-product__params">
                 <li v-for="(param, key) in product.parameters" :key="key" class="week-product__param">
-                    {{ key | mapParamName | capitalize}} : 
-                    <span class="week-product__param-unit"> {{ param | mapUnit(key) }} </span>
+                    {{ key | mapParamName | capitalize }} : 
+                    <span> {{ param | mapUnit(key) }} </span>
                 </li>
             </ul>
-            <span class="week-product__cost">Цена: {{product.cost | mapUnit('cost')}}</span>
+            <div class="week-product__cost">Цена: {{product.cost | mapUnit('cost')}}</div>
             <button class="week-product__order-btn" @click="onOrderClicked">заказать</button>
         </div>
         <img class="week-product__img" src="../assets/home-images/triplesetdesktop.png"/>
@@ -40,24 +40,25 @@ export default {
 
 <style scoped>
 
-.week-product{
+.week-product {
+    position: relative;
     display: flex;
     flex-direction: column;
     min-height: 600px;
+    width: 100%
 }
 
 .week-product__header{
     display: flex;
-    align-content: center;
-    justify-content: center;
-    margin-bottom: 100px;
+    align-items: center;
+    margin-top: 25px; 
     z-index: 1;
 }
 
 .week-product__header-caption {
     color:turquoise;
     font-weight: bold;
-    text-transform:uppercase;
+    text-transform: uppercase;
     font-size: var(--text-size__regular);
     text-align: center;
     width: 70px;
@@ -66,13 +67,13 @@ export default {
 .week-product__header-title {
     font-weight: bold;
     font-size: var(--text-size__large);
-    margin-left: 50px; 
+    margin-left: 30px; 
 }
 
 .week-product__card {
     position: relative;
     margin-top: auto; 
-    margin-left: 120px;
+    margin-left: 100px;
     max-width: 240px;
     z-index: 1;
 }
@@ -92,11 +93,7 @@ ul {
     padding-bottom: 10px; 
 }
 
-.week-product__param-unit {
-}
-
 .week-product__cost {
-    display: inline-block;
     width: 100%;
     text-align: center;
     margin-top: 50px;
@@ -118,8 +115,6 @@ ul {
     bottom: 0;
     right: 0;
     z-index: 0;
-    margin-bottom: 100px;
 }
-
 
 </style>
