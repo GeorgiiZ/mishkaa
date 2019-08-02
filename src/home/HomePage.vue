@@ -61,18 +61,20 @@ export default {
 .week-product-section {
     position: relative;
     display: flex;
+    flex-direction: column;
     width: 100%;
     padding: 70px 0 100px 50px; 
 }
 
 .week-product-section::after {
-    width: 100%;
+    width: auto;
     position: absolute;
     display: block;
     bottom: 0;
     left: 0;
     content: url("../assets/home-images/zigzaglinedesktopsvg_0.png");
 }
+
 
 .about-section {
     position: relative;

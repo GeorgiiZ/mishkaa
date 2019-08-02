@@ -116,11 +116,12 @@ body, #app {
 
 #app {
   --text-size__large: 50px;
-  --text-size__regular: 16px;
-  --text-size__light: 14px;
+  --text-size__regular: 18px;
+  --text-size__light: 16px;
   --line-height__paragraph: 200%;
   --light-grey: #F5F5F5;
   font-family: Open_Sans;
+  font-size: var(--text-size__light);
   line-height: 150%;
   height: 100%;
   display: flex;
@@ -129,7 +130,6 @@ body, #app {
 
 p {
   line-height: var(--line-height__paragraph);
-  font-size: var(--text-size__light);
 }
 
 </style>
