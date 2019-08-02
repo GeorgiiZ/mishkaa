@@ -1,13 +1,15 @@
 <template>
     <section class="home-header">
         <div class="home-header__title">{{message}}</div>
-        <div class="home-header__bottom">
-            <div class="home-header__bottom-right">
-                <span class="home-header__bottom-text">Предметы интерьера</span>
-            </div>
-            <div class="home-header__bottom-left">
-                <span class="home-header__bottom-text">Детские игрушки</span>
-            </div>
+        <div class="home-header__bottom
+                    home-header__bottom-right">
+            <span class="home-header__bottom-text">Предметы интерьера</span>
+            <img class="home-header__bottom-img" src="../assets/home-images/interiorsvg.png"/>
+        </div>
+        <div class="home-header__bottom
+                    home-header__bottom-left">
+            <span class="home-header__bottom-text">Детские игрушки</span>
+            <img class="home-header__bottom-img" src="../assets/home-images/toysvg.png"/>
         </div>
     </section>
 </template>
@@ -59,41 +61,33 @@ export default {
 }
 
 .home-header__bottom {
+    position: absolute;
     display: flex;
     background-color:	#353839;
-    margin-top: auto; 
-    height: 17%;
-    width: 100%;
+    align-items: center;
+    width: 39.9%;
+    height: 100px;
+    padding: 0 0 3% 25px;
+}
+
+.home-header__bottom:hover {
+    height: 105px;
+    padding-bottom: 35px; 
 }
 
 .home-header__bottom-right {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 50%;
-    height: 100%;
-    padding: 0 0 3% 25px;
+    bottom: 0;
+    left: 8%;
 }
 
-.home-header__bottom-right::after {
-    position: absolute;
-    right: 25px;
-    content: url('../assets/home-images/interiorsvg.png');
+.home-header__bottom-img{
+    margin-left: auto;
+    margin-right: 25px;
 }
 
 .home-header__bottom-left {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 50%;
-    height: 100%;
-    padding: 0 0 3% 25px;
-}
-
-.home-header__bottom-left::after {
-    position: absolute;
-    right: 25px;
-    content: url('../assets/home-images/toysvg.png'); 
+    bottom: 0;
+    right: 8%;
 }
 
 .home-header__bottom-text {
@@ -101,6 +95,14 @@ export default {
     color: white;
     font-size: var(--text-size__regular);
     font-weight: bold;
+}
+
+.home-header__bottom:active .home-header__bottom-text{
+        opacity: 0.5;
+}
+
+.home-header__bottom:active .home-header__bottom-img{
+    opacity: 0.5;
 }
 
 

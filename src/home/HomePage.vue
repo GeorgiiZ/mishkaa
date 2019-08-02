@@ -55,7 +55,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 100px
+    padding: 0 8%;
 }
 
 .week-product-section {
@@ -63,7 +63,7 @@ export default {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 70px 0 100px 50px; 
+    padding: 50px 0 100px 25px; 
 }
 
 .week-product-section::after {
@@ -79,9 +79,9 @@ export default {
 .about-section {
     position: relative;
     display: flex;
-    height: 1200px;
-    width: 100%;
-    padding: 50px 25px 100px 165px;
+    height: 1000px;
+    width: 86%;
+    padding: 50px 0 100px 140px; 
 }
 
 .about-section::after {

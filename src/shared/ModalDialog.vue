@@ -61,9 +61,13 @@ export default {
     margin: 0 auto;
     z-index: 2;
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    font-size: var(--text-size__light);
 }
 
 .modal-window__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
     padding: 30px;
     text-align: center;
@@ -75,14 +79,12 @@ export default {
 .modal-window__header {
     display: inline-block;
     text-transform: uppercase;
-    font-size: 2.5rem;
-    margin-top: 25px;
+    font-size: var(--text-size__regular);;
     font-weight: bold;
 }
 
 .modal-window__paragraph {
-    font-size: 1.5rem;
-    margin-top: 25px;
+    margin: 35px 0 0 0;
 }
 
 
@@ -93,7 +95,6 @@ export default {
 .modal-window__selection-item {
     display: inline-block;
     margin: 0 30px;
-    font-size: var(--text-size__regular);
     font-weight: bold;
 }
 

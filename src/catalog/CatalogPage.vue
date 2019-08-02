@@ -19,7 +19,7 @@
                         По просьбам наших любимых фоловеров мы сняли для вас подробное видео о том, как появляются наши товары. 
                     </p>
                 </article>
-                <div class="production__make-order">сделать заказ</div>
+                <button class="production__make-order">сделать заказ</button>
             </div>
         </div>
         <ModalDialog v-show="isModalOpened"
@@ -74,7 +74,10 @@ export default {
 }
 
 .production__desc {
-    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    padding: 50px;
 }
 
 .production__desc-header {
@@ -83,7 +86,7 @@ export default {
 }
 
 .production__desc-paragraph {
-    margin: 30px 0;
+    margin-top: 30px;
     line-height: var(--line-height__paragraph);
 }
 
@@ -98,6 +101,7 @@ export default {
     flex-shrink: 0;
 	width: 682px;
 	height: 455px;
+    margin-top: auto; 
 }
 
 .production__video-img {
@@ -109,13 +113,19 @@ export default {
     max-height: 78px;
 }
 
-
+.production__video-play:hover{
+    height: 120px;
+}
 
 .production__make-order {
     text-transform: uppercase;
     text-align:center;
-    margin: 50px auto;
+    margin: auto  auto 0 auto;
     font-weight: bold;
+    padding: 15px;
+    /* border: none; */
+    outline: inherit;
+    background-color: transparent;
     font-size: var(--text-size__regular);
 }
 

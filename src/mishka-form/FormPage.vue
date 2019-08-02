@@ -250,8 +250,10 @@ export default {
     max-width: 200px;
     text-transform: uppercase;
     font-weight: bold;
+    outline: inherit;
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 
 .make-order__paragraph {

@@ -80,8 +80,18 @@ export default {
 
 .contacts-info__data-email {
     margin-left: 25px; 
-    border-bottom: 1px solid aquamarine;
+    border-bottom: 1px solid turquoise;
     padding-bottom: 2px; 
+    cursor: pointer;
+}
+
+.contacts-info__data-email:hover {
+    color: turquoise;
+}
+
+.contacts-info__data-email:active {
+    color: turquoise;
+    opacity: 0.2;
 }
 
 .contacts-info__data-address {
@@ -101,6 +111,8 @@ export default {
     font-weight: bold;
     background-color: transparent;
     border: none;
+    cursor: pointer;
+    outline: inherit;
 }
 
 #map {

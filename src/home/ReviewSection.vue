@@ -26,10 +26,12 @@
                         <div> {{ curReview.email }} </div>
                     </div>
                     <div class="about__swap">
-                         <button class="about__swap-btn
-                                        about__swap-left" @click="swapReviewPrev()"></button>
-                         <button class="about__swap-btn
-                                        about__swap-right" @click="swapReviewNext()"></button>
+                         <button class="about__swap-btn" @click="swapReviewPrev()">
+                             <img src="../assets/home-images/hugearrowleftsvg.png"/>
+                         </button>
+                         <button type="image" class="about__swap-btn" @click="swapReviewNext()">
+                             <img src="../assets/home-images/hugearrowrightsvg.png"/>
+                         </button>
                     </div>
                 </div>
             </div>
@@ -204,20 +206,19 @@ export default {
 }
 
 .about__swap-btn {
-    padding: 15px;
-    font-size: 60px;
-    font-weight: bold;
     background-color: transparent;
     border: none;
     outline: inherit;
+    margin-left: 25px; 
+    cursor: pointer;
 }
 
-.about__swap-left::after  {
-    content: url("../assets/home-images/hugearrowleftsvg.png");
+.about__swap-btn:hover {
+    opacity: 0.5;
 }
 
-.about__swap-right::after  {
-    content: url("../assets/home-images/hugearrowrightsvg.png");
+.about__swap-btn:active {
+    opacity: 0.3;
 }
 
 

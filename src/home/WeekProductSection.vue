@@ -15,7 +15,9 @@
                 </li>
             </ul>
             <div class="week-product__cost">Цена: {{product.cost | mapUnit('cost')}}</div>
-            <button class="week-product__order-btn" @click="onOrderClicked">заказать</button>
+            <button class="week-product__order-btn" @click="onOrderClicked">
+                <span class="week-product__order-text">заказать</span>
+            </button>
         </div>
         <img class="week-product__img" src="../assets/home-images/triplesetdesktop.png"/>
     </div>
@@ -67,13 +69,13 @@ export default {
 .week-product__header-title {
     font-weight: bold;
     font-size: var(--text-size__large);
-    margin-left: 30px; 
+    margin-left: 50px; 
 }
 
 .week-product__card {
     position: relative;
     margin-top: auto; 
-    margin-left: 100px;
+    margin-left: 125px;
     max-width: 240px;
     z-index: 1;
 }
@@ -104,10 +106,24 @@ ul {
     margin-top: 25px; 
     width: 100%;
     border: none;
+    outline: inherit;
     background-color: 	#353839;
-    color: white;
     height: 40px;
+}
+
+.week-product__order-text {
+    color: transparent;
     text-transform: uppercase;
+    font-weight: bold;
+}
+
+.week-product__order-btn:hover .week-product__order-text{
+    color: white;
+}
+
+.week-product__order-btn:active .week-product__order-text{
+    color: white;
+    opacity: 0.5;
 }
 
 .week-product__img {

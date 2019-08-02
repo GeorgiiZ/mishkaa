@@ -3,46 +3,50 @@
     <header>
         <nav>
             <ul class="nav-main">
-              <li class="nav-item col-sm-2">
+              <li class="nav-item" style="width: 20%">
                   <router-link class = "nav-item__link 
                                         nav-item_indent"
                               :to ="{name: 'Catalog'}" exact >
                       Каталог товаров
                   </router-link>
-                  <div class="nav-item__text-outer 
-                              nav-item_indent">  
-                    Новые поступления
-                  </div>
+                  <span class="nav-item__text-outer 
+                               nav-item_indent
+                               nav-item__link">
+                      Новые поступления
+                  </span>
               </li>
-              <li class="nav-item col-sm-6">
-                <router-link class = "nav-item__link 
-                                      nav-item_indent" 
-                            :to="{name: 'Form'}">
-                  Вязание на заказ
-                </router-link>
-                <router-link class = "nav-item_centered" 
-                             to="/">
-                  <img src="./assets/catalog-images/mishkalogodesktopsvg.png"/>
-                </router-link>
-                <div class="nav-item__text-outer
-                            nav-item_indent">
-                  Распродажа
-                </div>
+              <li class="nav-item" style="width: 50%">
+                  <router-link class = "nav-item__link 
+                                        nav-item_indent" 
+                              :to="{name: 'Form'}">
+                    Вязание на заказ
+                  </router-link>
+                  <router-link class = "nav-item__logo
+                                        nav-item_centered" to="/">
+                    <img src="./assets/catalog-images/mishkalogodesktopsvg.png"/>
+                  </router-link>
+                  <span class="nav-item__text-outer
+                               nav-item_indent
+                               nav-item__link ">
+                      Распродажа
+                  </span>
               </li>
-              <li class="nav-item col-sm-1"> 
-                <img class="nav-item_centered" 
-                     src="./assets/catalog-images/searchsvg.png"/>
+              <li class="nav-item" style="width: 10%"> 
+                  <img class="nav-item_centered
+                              nav-item__functional" 
+                       src="./assets/catalog-images/searchsvg.png"/>
               </li>
-              <li class="nav-item col-sm-3" style="border-right: none;">
-                <img class="nav-item__img-cart" src="./assets/catalog-images/cartsvg.png"/>
-                <router-link  to="/" class="nav-item__link 
-                                            nav-item_indent">
+              <li class="nav-item" style="border-right: none; width: 30%">
+                <div class="nav-item__cart">
+                  <img class="nav-item__cart-img " src="./assets/catalog-images/cartsvg.png"/>
                   Корзина: {{basket.length | goodsFilter}}
-                </router-link>
-                <div class="nav-item__text-outer
-                            nav-item_last">
-                  Бесплатная доставка по России
                 </div>
+                <span class="nav-item__text-outer
+                             nav-item_last
+                             nav-item__link"
+                      style="font-weight: normal;">
+                    Бесплатная доставка по России
+                </span>
               </li>
             </ul>
         </nav>
@@ -52,15 +56,19 @@
       <router-view></router-view>
     </main>
     <footer class="footer-main">
-        <div class="footer-main__logo">
+        <div class="footer-main__logo
+                    footer-main__link">
           <img  src="./assets/catalog-images/logofootersvg.png"/>
         </div>
-        <div class="footer-main__social-links">
+        <div class="footer-main__social
+                    footer-main__link">
           <img class="footer-main__social-img" src="./assets/catalog-images/instasvg.png"/>
           <img class="footer-main__social-img" src="./assets/catalog-images/fbsvg.png"/>
           <img class="footer-main__social-img" src="./assets/catalog-images/twittersvg.png"/>
         </div>
-        <a class="footer-main__develop" target="_blank" href="https://htmlacademy.ru/intensive/adaptive">
+        <a class="footer-main__develop
+                  footer-main__link" 
+          target="_blank" href="https://htmlacademy.ru/intensive/adaptive">
           <span class="footer-main__develop-capture">Разработано</span>
           <img src="./assets/catalog-images/htmlacademysvg.png"/>
         </a>
@@ -162,11 +170,33 @@ p {
 
 .nav-item_last {
   margin-left: 25px;
+  font-weight: lighter;
 }
 
 .nav-item__link, a {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
+}
+
+.nav-item__link:hover{
+  opacity: 0.8;
+}
+
+.nav-item__link:active {
+  opacity: 0.5;
+}
+
+.nav-item__functional {
+  opacity: 1.5;
+}
+
+.nav-item__logo:hover {
+  opacity: 0.7;
+}
+
+.nav-item__logo:active {
+  opacity: 0.5;
 }
 
 .nav-item__text-outer {
@@ -181,9 +211,14 @@ p {
   margin: 0 auto;
 }
 
-.nav-item__img-cart {
-  max-height: 25px;
+.nav-item__cart {
+  display: flex;
+  align-items: center;
   margin: 0 25px;
+}
+
+.nav-item__cart-img {
+  margin-right: 25px;
 }
 
 .main-content {
@@ -203,8 +238,15 @@ p {
   background-color: var(--light-grey);
 }
 
+.footer-main__link {
+  cursor: pointer;
+}
 
-.footer-main__social-links {
+.footer-main__link:active {
+  opacity: 0.5;
+}
+
+.footer-main__social {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
@@ -217,7 +259,9 @@ p {
 }
 
 .footer-main__develop {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+
 }
 
 .footer-main__develop-capture {
