@@ -65,7 +65,6 @@
           <img src="./assets/catalog-images/htmlacademysvg.png"/>
         </a>
     </footer>
-    
   </div>
 </template>
 

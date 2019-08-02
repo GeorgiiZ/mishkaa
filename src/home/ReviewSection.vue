@@ -26,8 +26,10 @@
                         <div> {{ curReview.email }} </div>
                     </div>
                     <div class="about__swap">
-                         <button class="about__swap-btn" @click="swapReviewPrev()">&#8592</button>
-                         <button class="about__swap-btn" @click="swapReviewNext()">&#8594</button>
+                         <button class="about__swap-btn
+                                        about__swap-left" @click="swapReviewPrev()"></button>
+                         <button class="about__swap-btn
+                                        about__swap-right" @click="swapReviewNext()"></button>
                     </div>
                 </div>
             </div>
@@ -209,6 +211,15 @@ export default {
     border: none;
     outline: inherit;
 }
+
+.about__swap-left::after  {
+    content: url("../assets/home-images/hugearrowleftsvg.png");
+}
+
+.about__swap-right::after  {
+    content: url("../assets/home-images/hugearrowrightsvg.png");
+}
+
 
 
 </style>
