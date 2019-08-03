@@ -95,9 +95,11 @@ export default {
 }
 
 .production__video {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     flex-shrink: 0;
 	width: 682px;
 	height: 455px;
@@ -106,6 +108,8 @@ export default {
 
 .production__video-img {
     position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 .production__video-play {
@@ -114,7 +118,12 @@ export default {
 }
 
 .production__video-play:hover{
-    height: 120px;
+    width: 120px;
+}
+
+.production__video-play:active{
+    width: 100px;
+    opacity: 0.7;
 }
 
 .production__make-order {
@@ -123,9 +132,10 @@ export default {
     margin: auto  auto 0 auto;
     font-weight: bold;
     padding: 15px;
-    /* border: none; */
+    border: none;
     outline: inherit;
     background-color: transparent;
+    cursor: pointer;
     font-size: var(--text-size__regular);
 }
 

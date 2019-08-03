@@ -17,7 +17,7 @@
                     <button class="about__write-btn">написать</button>
                 </div>
                 <div class="about__review-block">
-                    <p> {{curReview.text}} </p>
+                    <p> {{ curReview.text }} </p>
                 </div>
                 <div class="about__review-block
                             about__review-block_bottom">
@@ -191,6 +191,8 @@ export default {
     margin-left: auto;
     padding: 10px;
     text-transform: uppercase;
+    outline: inherit;
+    cursor: pointer;
     font-weight: bold;
     background-color: transparent;
     border: none;

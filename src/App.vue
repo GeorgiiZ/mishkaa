@@ -21,7 +21,7 @@
                               :to="{name: 'Form'}">
                     Вязание на заказ
                   </router-link>
-                  <router-link class = "nav-item__logo
+                  <router-link class = "nav-item__link
                                         nav-item_centered" to="/">
                     <img src="./assets/catalog-images/mishkalogodesktopsvg.png"/>
                   </router-link>
@@ -33,13 +33,14 @@
               </li>
               <li class="nav-item" style="width: 10%"> 
                   <img class="nav-item_centered
-                              nav-item__functional" 
-                       src="./assets/catalog-images/searchsvg.png"/>
+                              nav-item__search" 
+                       src="./assets/style-guide/searchsvgcopy.png"/>
               </li>
               <li class="nav-item" style="border-right: none; width: 30%">
                 <div class="nav-item__cart">
-                  <img class="nav-item__cart-img " src="./assets/catalog-images/cartsvg.png"/>
-                  Корзина: {{basket.length | goodsFilter}}
+                  <img class="nav-item__cart-img" 
+                       src="./assets/style-guide/cartsvgcopy.png"/>
+                  <span class="nav-item__cart-text">Корзина: {{basket.length | goodsFilter}}</span>
                 </div>
                 <span class="nav-item__text-outer
                              nav-item_last
@@ -180,24 +181,26 @@ p {
 }
 
 .nav-item__link:hover{
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 .nav-item__link:active {
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
-.nav-item__functional {
-  opacity: 1.5;
+.nav-item__search {
+  opacity: 0.2;
+  cursor: pointer;
 }
 
-.nav-item__logo:hover {
-  opacity: 0.7;
+.nav-item__search:hover {
+  opacity: 1;
 }
 
-.nav-item__logo:active {
-  opacity: 0.5;
+.nav-item__search:active {
+  opacity: 0.3;
 }
+
 
 .nav-item__text-outer {
   font-size: var(--text-size__light);
@@ -215,10 +218,29 @@ p {
   display: flex;
   align-items: center;
   margin: 0 25px;
+  cursor: pointer;
 }
+
 
 .nav-item__cart-img {
   margin-right: 25px;
+  opacity: 0.2;
+}
+
+.nav-item__cart:hover .nav-item__cart-img {
+   opacity: 1;
+}
+
+.nav-item__cart:hover .nav-item__cart-text {
+   opacity: 0.6;
+}
+
+.nav-item__cart:active .nav-item__cart-img {
+   opacity: 0.4;
+}
+
+.nav-item__cart:active .nav-item__cart-text {
+   opacity: 0.4;
 }
 
 .main-content {

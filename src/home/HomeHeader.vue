@@ -65,7 +65,7 @@ export default {
     display: flex;
     background-color:	#353839;
     align-items: center;
-    width: 39.9%;
+    width: 39.2%;
     height: 100px;
     padding: 0 0 3% 25px;
 }
@@ -77,7 +77,7 @@ export default {
 
 .home-header__bottom-right {
     bottom: 0;
-    left: 8%;
+    left: 100px;;
 }
 
 .home-header__bottom-img{
@@ -87,7 +87,7 @@ export default {
 
 .home-header__bottom-left {
     bottom: 0;
-    right: 8%;
+    right: 100px;
 }
 
 .home-header__bottom-text {

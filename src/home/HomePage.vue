@@ -54,16 +54,15 @@ export default {
 .home-main {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 0 8%;
+    justify-content:flex-start;
+    padding: 0 100px;
 }
 
 .week-product-section {
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    padding: 50px 0 100px 25px; 
+    padding: 100px 0 100px 50px; 
 }
 
 .week-product-section::after {
@@ -80,12 +79,10 @@ export default {
     position: relative;
     display: flex;
     height: 1000px;
-    width: 86%;
-    padding: 50px 0 100px 140px; 
+    padding: 50px 0 100px 175px; 
 }
 
 .about-section::after {
-    width: 100%;
     position: absolute;
     display: block;
     bottom: 0;
@@ -103,8 +100,7 @@ export default {
 
 .contacts-section {
     display: flex;
-    width: 100%;
-    padding: 50px 50px 100px 50px;
+    padding: 50px 0 100px 50px;
 }
 
 

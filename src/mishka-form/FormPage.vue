@@ -127,12 +127,16 @@ export default {
 .form-container {
     display: flex;
     flex-direction: column;
-    font-size: var(--text-size__light);
+    font-size: var(--text-size__regular);
 }
 
 .form-section {
     display: flex;
     padding: 50px 100px 0 100px;
+}
+
+::placeholder {
+    opacity: 0.5;
 }
 
 .form-section_highlighted {
@@ -152,18 +156,14 @@ export default {
     min-height: 300px;
 }
 
-
-
 .form-section__caption {
     color:turquoise;
     font-weight: bold;
     text-transform:uppercase;
-    font-size: var(--text-size__regular);
 }
 
 .initial-info {
     font-size: var(--text-size__light);
-    font-weight: lighter;
     margin: 30px 135px 0 135px;
 }
 
@@ -188,7 +188,6 @@ export default {
 .controls__item {
     position: relative;
     margin: 0 0px 50px 100px;
-    font-size: var(--text-size__regular);
 }
 
 .controls__item_indent {
