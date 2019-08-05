@@ -219,13 +219,13 @@ export default {
 #phoneNumberContainer::after{
     position: absolute;
     right: 170px;
-    content: url("../assets/form-images/phonesvg.png");
+    content: url("../assets/phonesvg.png");
 }
 
 #emailContainer::after {
     position: absolute;
     right: 170px;
-    content: url("../assets/form-images/mailsvg.png");
+    content: url("../assets/mailsvg.png");
 }
 
 .form-input_textarea {
@@ -246,7 +246,7 @@ export default {
 
 .make-order__btn{
     padding: 15px;
-    max-width: 200px;
+    max-width: 250px;
     text-transform: uppercase;
     font-weight: bold;
     outline: inherit;
@@ -262,10 +262,19 @@ export default {
 
 input[type="checkbox"], input[type="radio"] {
     display: none;
+    font-size: var(--text-size__regular);
+}
+
+button {
+    font-size: var(--text-size__regular);
+}
+
+textarea {
+    font-size: var(--text-size__regular);
 }
 
 :checked + span:before  {
-    content: url("../assets/form-images/VectorSmartObjectcop.png");
+    content: url("../assets/VectorSmartObjectcop.png");
     position: absolute;
     top: 0;
     left: 0;

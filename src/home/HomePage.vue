@@ -6,7 +6,7 @@
         </section>
         <section class="about-section">
             <ReviewSection />
-            <img class="about__review-img" src="../assets/home-images/review.png"/>      
+            <img class="about__review-img" src="../assets/review.png"/>      
         </section>
         <section class="contacts-section">
            <ContactsSection/>
@@ -71,7 +71,7 @@ export default {
     display: block;
     bottom: 0;
     left: 0;
-    content: url("../assets/home-images/zigzaglinedesktopsvg_0.png");
+    content: url("../assets/zigzaglinedesktopsvg.png");
 }
 
 
@@ -87,7 +87,7 @@ export default {
     display: block;
     bottom: 0;
     left: 0;
-    content: url("../assets/home-images/zigzaglinedesktopsvg.png");
+    content: url("../assets/zigzaglinedesktopsvg.png");
 }
 
 .about__review-img {

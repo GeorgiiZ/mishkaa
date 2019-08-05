@@ -4,12 +4,12 @@
         <div class="home-header__bottom
                     home-header__bottom-right">
             <span class="home-header__bottom-text">Предметы интерьера</span>
-            <img class="home-header__bottom-img" src="../assets/home-images/interiorsvg.png"/>
+            <img class="home-header__bottom-img" src="../assets/interiorsvg.png"/>
         </div>
         <div class="home-header__bottom
                     home-header__bottom-left">
             <span class="home-header__bottom-text">Детские игрушки</span>
-            <img class="home-header__bottom-img" src="../assets/home-images/toysvg.png"/>
+            <img class="home-header__bottom-img" src="../assets/toysvg.png"/>
         </div>
     </section>
 </template>
@@ -36,7 +36,7 @@ export default {
     align-items: center;
     padding: 0 100px;
     height: 750px;
-    background-image: url("../assets/home-images/herodesktopjpg.png");
+    background-image: url("../assets/herodesktopjpg.png");
 }
 
 
@@ -54,7 +54,7 @@ export default {
     position: absolute;
     width: 100%;
     height: 34px;
-    background: url("../assets/home-images/zigzagfilldesktopsvg.png");
+    background: url("../assets/zigzagfilldesktopsvg.png");
     bottom: 0;
     left: 0;
     z-index: 1;

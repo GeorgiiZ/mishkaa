@@ -19,7 +19,7 @@
                 <span class="week-product__order-text">заказать</span>
             </button>
         </div>
-        <img class="week-product__img" src="../assets/home-images/triplesetdesktop.png"/>
+        <img class="week-product__img" src="../assets/triplesetdesktop.png"/>
     </div>
 </template>
 
@@ -47,7 +47,7 @@ export default {
     display: flex;
     flex-direction: column;
     min-height: 600px;
-    width: 100%
+    width: 100%;
 }
 
 .week-product__header{
@@ -115,6 +115,7 @@ ul {
     color: transparent;
     text-transform: uppercase;
     font-weight: bold;
+    font-size:  var(--text-size__light);
 }
 
 .week-product__order-btn:hover .week-product__order-text{

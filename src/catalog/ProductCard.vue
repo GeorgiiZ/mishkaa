@@ -12,7 +12,7 @@
             <div class="product__buy-cost">
                 <strong>{{product.cost}} руб.</strong>
                 <img class="product__buy-basket" 
-                     src="../assets/catalog-images/cartsvg.png"
+                     src="../assets/cartsvg.png"
                      @click="basketClick()"/>
             </div>
         </div>
@@ -67,6 +67,7 @@ export default {
 
 .product__buy-cost {
     display: flex;
+    align-items: center;
 }
 
 .product__buy-basket {

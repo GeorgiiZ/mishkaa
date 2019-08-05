@@ -27,10 +27,10 @@
                     </div>
                     <div class="about__swap">
                          <button class="about__swap-btn" @click="swapReviewPrev()">
-                             <img src="../assets/home-images/hugearrowleftsvg.png"/>
+                             <img src="../assets/hugearrowleftsvg.png"/>
                          </button>
                          <button type="image" class="about__swap-btn" @click="swapReviewNext()">
-                             <img src="../assets/home-images/hugearrowrightsvg.png"/>
+                             <img src="../assets/hugearrowrightsvg.png"/>
                          </button>
                     </div>
                 </div>
@@ -123,42 +123,42 @@ export default {
     position: absolute;
     top: -50px;
     left: 10px;
-    content: url("../assets/home-images/icon1svg.png");
+    content: url("../assets/icon1svg.png");
 }
 
 #cash-pic::before{
     position: absolute;
     top: -50px;
     left: 10px;
-    content: url("../assets/home-images/icon3svg.png");
+    content: url("../assets/icon3svg.png");
 }
 
 #heart-pic::before{
     position: absolute;
     top: -50px;
     left: 10px;
-    content: url("../assets/home-images/icon5svg.png");
+    content: url("../assets/icon5svg.png");
 }
 
 #roll-pic::before {
     position: absolute;
     top: -50px;
     left: 10px;
-    content: url("../assets/home-images/icon2svg.png");
+    content: url("../assets/icon2svg.png");
 }
 
 #rocket-pic::before {
     position: absolute;
     top: -50px;
     left: 10px;
-    content: url("../assets/home-images/icon4svg.png");
+    content: url("../assets/icon4svg.png");
 }
 
 #present-pic::before {
     position: absolute;
     top: -50px;
     left: 10px;
-    content: url("../assets/home-images/icon6svg.png");
+    content: url("../assets/icon6svg.png");
 }
 
 .about__review {

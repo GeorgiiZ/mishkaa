@@ -38,7 +38,7 @@ export default {
     position: absolute;
     width: 1150px;
 	height: 34px;
-    background: url("../assets/catalog-images/zigzagfilldesktopsvg.png");
+    background: url("../assets/zigzagfilldesktopsvg.png");
     bottom: 0;
     left: 0;
 }

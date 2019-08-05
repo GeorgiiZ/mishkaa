@@ -1,4 +1,4 @@
-const images = require.context("../assets/home-images/", true, /\.png$/)
+const images = require.context("../assets/", true, /\.png$/)
 
 const weekProduct = {
     name: 'Вязанные корзинки',

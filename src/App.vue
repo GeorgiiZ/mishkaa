@@ -23,7 +23,7 @@
                   </router-link>
                   <router-link class = "nav-item__link
                                         nav-item_centered" to="/">
-                    <img src="./assets/catalog-images/mishkalogodesktopsvg.png"/>
+                    <img src="./assets/mishkalogodesktopsvg.png"/>
                   </router-link>
                   <span class="nav-item__text-outer
                                nav-item_indent
@@ -34,12 +34,12 @@
               <li class="nav-item" style="width: 10%"> 
                   <img class="nav-item_centered
                               nav-item__search" 
-                       src="./assets/style-guide/searchsvgcopy.png"/>
+                       src="./assets/searchsvgcopy.png"/>
               </li>
               <li class="nav-item" style="border-right: none; width: 30%">
                 <div class="nav-item__cart">
                   <img class="nav-item__cart-img" 
-                       src="./assets/style-guide/cartsvgcopy.png"/>
+                       src="./assets/cartsvgcopy.png"/>
                   <span class="nav-item__cart-text">Корзина: {{basket.length | goodsFilter}}</span>
                 </div>
                 <span class="nav-item__text-outer
@@ -59,19 +59,19 @@
     <footer class="footer-main">
         <div class="footer-main__logo
                     footer-main__link">
-          <img  src="./assets/catalog-images/logofootersvg.png"/>
+          <img  src="./assets/logofootersvg.png"/>
         </div>
         <div class="footer-main__social
                     footer-main__link">
-          <img class="footer-main__social-img" src="./assets/catalog-images/instasvg.png"/>
-          <img class="footer-main__social-img" src="./assets/catalog-images/fbsvg.png"/>
-          <img class="footer-main__social-img" src="./assets/catalog-images/twittersvg.png"/>
+          <img class="footer-main__social-img" src="./assets/instasvg.png"/>
+          <img class="footer-main__social-img" src="./assets/fbsvg.png"/>
+          <img class="footer-main__social-img" src="./assets/twittersvg.png"/>
         </div>
         <a class="footer-main__develop
                   footer-main__link" 
           target="_blank" href="https://htmlacademy.ru/intensive/adaptive">
           <span class="footer-main__develop-capture">Разработано</span>
-          <img src="./assets/catalog-images/htmlacademysvg.png"/>
+          <img src="./assets/htmlacademysvg.png"/>
         </a>
     </footer>
   </div>
@@ -139,6 +139,20 @@ body, #app {
 
 p {
   line-height: var(--line-height__paragraph);
+}
+
+button {
+    font-family: Open_Sans;
+    font-size: var(--text-size__light);
+}
+
+input {
+    font-family: Open_Sans;
+    font-size: var(--text-size__light);
+}
+
+textarea{
+    font-family: Open_Sans;
 }
 
 </style>

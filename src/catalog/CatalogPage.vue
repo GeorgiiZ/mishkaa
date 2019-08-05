@@ -8,11 +8,11 @@
         </div>
         <div class="production">
             <div class="production__video">
-                <img class="production__video-play" src="../assets/catalog-images/playsvg.png"/>
-                <img class="production__video-img" src="../assets/catalog-images/videodesktop.png"/>
+                <img class="production__video-play" src="../assets/playsvg.png"/>
+                <img class="production__video-img" src="../assets/videodesktop.png"/>
             </div>
             <div class="production__desc">
-                <img class="production__camera-img" src="../assets/catalog-images/videosvg.png"/>
+                <img class="production__camera-img" src="../assets/videosvg.png"/>
                 <article>
                     <span class="production__desc-header">Процесс производства</span>
                     <p class="production__desc-paragraph">
@@ -136,7 +136,6 @@ export default {
     outline: inherit;
     background-color: transparent;
     cursor: pointer;
-    font-size: var(--text-size__regular);
 }
 
 hr {
