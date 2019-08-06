@@ -66,12 +66,16 @@ export default {
 }
 
 .week-product-section::after {
-    width: auto;
+    max-width: 100%;
     position: absolute;
-    display: block;
     bottom: 0;
     left: 0;
     content: url("../assets/zigzaglinedesktopsvg.png");
+}
+
+.zigzag-line {
+    max-width:100%;
+    margin-top: 50px;
 }
 
 
@@ -84,7 +88,6 @@ export default {
 
 .about-section::after {
     position: absolute;
-    display: block;
     bottom: 0;
     left: 0;
     content: url("../assets/zigzaglinedesktopsvg.png");
