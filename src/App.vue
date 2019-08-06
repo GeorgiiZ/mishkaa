@@ -267,7 +267,7 @@ textarea{
 }
 
 .footer-main {
-  width: 1150px;
+  width: 1050px;
   margin: auto auto 0 auto; 
   padding: 50px;
   display: flex;
