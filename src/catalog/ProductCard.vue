@@ -1,8 +1,8 @@
 <template>
     <div class="product">
-        <img class="product__img" :src="product.src"/>
+        <img class="product__img" :src="product.src" alt="product-pic"/>
         <div class="product__info"
-            @click="basketClick()">
+            @click="cartClick()">
             <div class="product__desc">
                 <div class="product__desc-name" >{{product.name}}</div>
                 <span v-for="(param, key) in product.parameters" :key="key">
@@ -11,8 +11,8 @@
             </div>
             <div class="product__buy">
                 <span class="product__buy-cost">{{product.cost}} руб.</span>
-                <img class="product__buy-basket" 
-                     src="../assets/cartsvgcopy.png"/>
+                <img class="product__buy-cart" 
+                     src="../assets/cartsvgcopy.png" alt="cart-button"/>
             </div>
         </div>
     </div>
@@ -28,8 +28,8 @@ export default {
         }
     },
     methods: {
-        basketClick() {
-            this.$emit('basketClicked', this.product);
+        cartClick() {
+            this.$emit('cartClicked', this.product);
         }
     }
 }
@@ -77,14 +77,14 @@ export default {
     font-weight: bold;
 }
 
-.product__buy-basket {
+.product__buy-cart {
   max-height: 25px;
   position: relative;
   margin-left: auto;
   opacity: 0.2;
 }
 
-.product__info:hover .product__buy-basket {
+.product__info:hover .product__buy-cart {
     opacity: 1;
 }
 
@@ -92,7 +92,7 @@ export default {
     opacity: 0.6;
 }
 
-.product__info:active .product__buy-basket {
+.product__info:active .product__buy-cart {
     opacity: 0.3;
 }
 

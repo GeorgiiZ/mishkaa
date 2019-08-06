@@ -27,10 +27,10 @@
                     </div>
                     <div class="about__swap">
                          <button class="about__swap-btn" @click="swapReviewPrev()">
-                             <img src="../assets/hugearrowleftsvg.png"/>
+                             <img src="../assets/hugearrowleftsvg.png" alt="arrow-left-button"/>
                          </button>
                          <button type="image" class="about__swap-btn" @click="swapReviewNext()">
-                             <img src="../assets/hugearrowrightsvg.png"/>
+                             <img src="../assets/hugearrowrightsvg.png" alt="arrow-right-button"/>
                          </button>
                     </div>
                 </div>

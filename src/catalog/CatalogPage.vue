@@ -3,16 +3,16 @@
         <div class="products">
             <ProductCard v-for ="(product, key) in availibleProducts" :key="key" 
                          :product ="product"
-                         @basketClicked ="onModalWindow(product)">
+                         @cartClicked ="onModalWindow(product)">
             </ProductCard>
         </div>
         <div class="production">
             <div class="production__video">
-                <img class="production__video-play" src="../assets/playsvg.png"/>
-                <img class="production__video-img" src="../assets/videodesktop.png"/>
+                <img class="production__video-play" src="../assets/playsvg.png" alt="play-video-button"/>
+                <img class="production__video-img" src="../assets/videodesktop.png" alt="video"/>
             </div>
             <div class="production__desc">
-                <img class="production__camera-img" src="../assets/videosvg.png"/>
+                <img class="production__camera-img" src="../assets/videosvg.png" alt="camera-pic"/>
                 <article>
                     <span class="production__desc-header">Процесс производства</span>
                     <p class="production__desc-paragraph">

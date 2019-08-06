@@ -2,7 +2,7 @@
      <section class="contacts">
         <div class="contacts-info">
                 <div class="contacts-info__header">
-                    <img src="../assets/flagsvg.png"/>
+                    <img src="../assets/flagsvg.png" alt="flag-pic"/>
                     <span class="contacts-info__header-text">Контакты</span>
                 </div>
                 <div class="contacts-info__data">

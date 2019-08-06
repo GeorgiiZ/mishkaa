@@ -6,7 +6,7 @@
         </section>
         <section class="about-section">
             <ReviewSection />
-            <img class="about__review-img" src="../assets/review.png"/>      
+            <img class="about__review-img" src="../assets/review.png" alt="review-pic"/>      
         </section>
         <section class="contacts-section">
            <ContactsSection/>

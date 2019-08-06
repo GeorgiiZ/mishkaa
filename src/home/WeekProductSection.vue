@@ -19,7 +19,7 @@
                 <span class="week-product__order-text">заказать</span>
             </button>
         </div>
-        <img class="week-product__img" src="../assets/triplesetdesktop.png"/>
+        <img class="week-product__img" src="../assets/triplesetdesktop.png" alt="tripleset-pic"/>
     </div>
 </template>
 

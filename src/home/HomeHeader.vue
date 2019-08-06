@@ -4,12 +4,12 @@
         <div class="home-header__bottom
                     home-header__bottom-right">
             <span class="home-header__bottom-text">Предметы интерьера</span>
-            <img class="home-header__bottom-img" src="../assets/interiorsvg.png"/>
+            <img class="home-header__bottom-img" src="../assets/interiorsvg.png" alt="interior-button"/>
         </div>
         <div class="home-header__bottom
                     home-header__bottom-left">
             <span class="home-header__bottom-text">Детские игрушки</span>
-            <img class="home-header__bottom-img" src="../assets/toysvg.png"/>
+            <img class="home-header__bottom-img" src="../assets/toysvg.png" alt="toy-button"/>
         </div>
     </section>
 </template>
