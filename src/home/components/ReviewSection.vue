@@ -27,10 +27,10 @@
                     </div>
                     <div class="about__swap">
                          <button class="about__swap-btn" @click="swapReviewPrev()">
-                             <img src="../assets/hugearrowleftsvg.png" alt="arrow-left-button"/>
+                             <img src="../../assets/hugearrowleftsvg.png" alt="arrow-left-button"/>
                          </button>
                          <button type="image" class="about__swap-btn" @click="swapReviewNext()">
-                             <img src="../assets/hugearrowrightsvg.png" alt="arrow-right-button"/>
+                             <img src="../../assets/hugearrowrightsvg.png" alt="arrow-right-button"/>
                          </button>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
 
 <script>
 
-import reviews from '../api/reviews';
+import reviews from '../../api/reviews';
 
 function getPreviousValidIndex(index, length) {
   const deprecatedIndex = index - 1;
@@ -123,42 +123,42 @@ export default {
     position: absolute;
     top: -50px;
     left: 10px;
-    content: url("../assets/icon1svg.png");
+    content: url("../../assets/icon1svg.png");
 }
 
 #cash-pic::before{
     position: absolute;
     top: -50px;
     left: 10px;
-    content: url("../assets/icon3svg.png");
+    content: url("../../assets/icon3svg.png");
 }
 
 #heart-pic::before{
     position: absolute;
     top: -50px;
     left: 10px;
-    content: url("../assets/icon5svg.png");
+    content: url("../../assets/icon5svg.png");
 }
 
 #roll-pic::before {
     position: absolute;
     top: -50px;
     left: 10px;
-    content: url("../assets/icon2svg.png");
+    content: url("../../assets/icon2svg.png");
 }
 
 #rocket-pic::before {
     position: absolute;
     top: -50px;
     left: 10px;
-    content: url("../assets/icon4svg.png");
+    content: url("../../assets/icon4svg.png");
 }
 
 #present-pic::before {
     position: absolute;
     top: -50px;
     left: 10px;
-    content: url("../assets/icon6svg.png");
+    content: url("../../assets/icon6svg.png");
 }
 
 .about__review {
@@ -222,7 +222,5 @@ export default {
 .about__swap-btn:active {
     opacity: 0.3;
 }
-
-
 
 </style>

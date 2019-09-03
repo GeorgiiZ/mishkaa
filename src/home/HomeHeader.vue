@@ -80,7 +80,7 @@ export default {
     left: 100px;;
 }
 
-.home-header__bottom-img{
+.home-header__bottom-img {
     margin-left: auto;
     margin-right: 25px;
 }
@@ -97,11 +97,11 @@ export default {
     font-weight: bold;
 }
 
-.home-header__bottom:active .home-header__bottom-text{
+.home-header__bottom:active .home-header__bottom-text {
         opacity: 0.5;
 }
 
-.home-header__bottom:active .home-header__bottom-img{
+.home-header__bottom:active .home-header__bottom-img {
     opacity: 0.5;
 }
 

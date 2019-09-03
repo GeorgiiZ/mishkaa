@@ -2,12 +2,12 @@
      <section class="contacts">
         <div class="contacts-info">
                 <div class="contacts-info__header">
-                    <img src="../assets/flagsvg.png" alt="flag-pic"/>
+                    <img src="../../assets/flagsvg.png" alt="flag-pic"/>
                     <span class="contacts-info__header-text">Контакты</span>
                 </div>
                 <div class="contacts-info__data">
                     <div class="contacts-info__data-block">
-                        <div>e-mail:</div>
+                        <div> e-mail: </div>
                         <div class="contacts-info__data-email"> {{contactEmail}} </div>
                     </div>
                     <div class="contacts-info__data-block">

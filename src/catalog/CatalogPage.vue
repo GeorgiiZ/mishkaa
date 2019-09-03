@@ -30,7 +30,7 @@
 
 <script>
 import availibleProducts from '../api/products';
-import ProductCard from './ProductCard.vue';
+import ProductCard from './components/ProductCard.vue';
 import ModalDialog from '../shared/ModalDialog.vue';
 
 export default {

@@ -10,9 +10,8 @@
                 </span>
             </div>
             <div class="product__buy">
-                <span class="product__buy-cost">{{product.cost}} руб.</span>
-                <img class="product__buy-cart" 
-                     src="../assets/cartsvgcopy.png" alt="cart-button"/>
+                <span class="product__buy-cost">{{ product.cost }} руб.</span>
+                <img class="product__buy-cart" src="../../assets/cartsvgcopy.png" alt="cart-button"/>
             </div>
         </div>
     </div>

@@ -10,6 +10,7 @@ import HomeHeader from '../home/HomeHeader';
 import FormHeader from '../mishka-form/FormHeader';
 import FormPage from '../mishka-form/FormPage';
 
+import Layout from '../layout/Layout';
 
 Vue.use(Router);
 
@@ -18,26 +19,36 @@ export default new Router({
     routes: [
         {
             path:'/',
-            name: 'home',
+            name: 'layout',
+            redirect: 'home',
             components: {
-                header: HomeHeader,
-                default: HomePage,
+                default: Layout,
+            },
+            children: [
+                {
+                    path:'home',
+                    name: 'home',
+                    components: {
+                        header: HomeHeader,
+                        default: HomePage,
+                    },
+                }, 
+                {
+                    path:'catalog',
+                    name: 'catalog',
+                    components: {
+                        header: CatalogHeader,
+                        default: CatalogPage,
+                    },
                 },
-        }, 
-        {
-            path:'/catalog',
-            name: 'Catalog',
-            components: {
-                header: CatalogHeader,
-                default: CatalogPage,
-            },
-        },
-        {
-            path:'/form',
-            name: 'Form',
-            components: {
-                header: FormHeader,
-                default: FormPage,
-            },
+                {
+                    path:'form',
+                    name: 'form',
+                    components: {
+                        header: FormHeader,
+                        default: FormPage,
+                    },
+                }
+            ]
         }]
 })

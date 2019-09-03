@@ -1,29 +1,29 @@
 <template>
     <div class="home-main">
         <section class="week-product-section">
-            <WeekProduct :product="weekProduct"
-                        @onOrderClicked="onOrdered()"/>
+            <WeekProduct :product="weekProduct" @onOrderClicked="onOrdered()"/>
+            <div class="home-main__zig-zag"></div>
         </section>
         <section class="about-section">
             <ReviewSection />
-            <img class="about__review-img" src="../assets/review.png" alt="review-pic"/>      
+            <img class="about__review-img" src="../assets/review.png" alt="review-pic"/> 
+            <div class="home-main__zig-zag"></div>     
         </section>
         <section class="contacts-section">
            <ContactsSection/>
         </section>
-        <ModalDialog v-show="isModalOpened"
-                     @onClosed ="() => isModalOpened = false" 
+        <ModalDialog v-show="isModalOpened" @onClosed ="() => isModalOpened = false" 
                      :selectedProduct ="weekProduct"/>
     </div>
 </template>
 
 
 <script>
-import WeekProduct from './WeekProductSection.vue';
+import WeekProduct from './components/WeekProductSection';
 import weekProduct from '../api/week-product';
 import ModalDialog from '../shared/ModalDialog.vue';
-import ReviewSection from './ReviewSection.vue';
-import ContactsSection from './ContactsSection.vue';
+import ReviewSection from './components/ReviewSection.vue';
+import ContactsSection from './components/ContactsSection.vue';
 
 
 
@@ -58,6 +58,17 @@ export default {
     padding: 0 100px;
 }
 
+.home-main__zig-zag {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: url("../assets/zigzaglinedesktopsvg.png") no-repeat;
+    background-position: center;
+    object-fit: cover;
+    height: 25px;
+}
+
 .week-product-section {
     position: relative;
     display: flex;
@@ -65,13 +76,6 @@ export default {
     padding: 100px 0 100px 50px; 
 }
 
-.week-product-section::after {
-    max-width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    content: url("../assets/zigzaglinedesktopsvg.png");
-}
 
 .zigzag-line {
     max-width:100%;
@@ -86,12 +90,6 @@ export default {
     padding: 50px 0 100px 175px; 
 }
 
-.about-section::after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    content: url("../assets/zigzaglinedesktopsvg.png");
-}
 
 .about__review-img {
     position: absolute;
@@ -105,7 +103,6 @@ export default {
     display: flex;
     padding: 50px 0 100px 50px;
 }
-
 
 </style>
 
