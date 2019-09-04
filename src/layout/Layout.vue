@@ -52,8 +52,7 @@
           <router-view></router-view>
         </main>
         <footer class="footer-main">
-            <div class="footer-main__logo
-                        footer-main__link">
+            <div class="footer-main__link">
               <img  src="../assets/logofootersvg.png" alt="foter-logo"/>
             </div>
             <div class="footer-main__social
@@ -209,11 +208,13 @@ export default {
   margin: auto auto 0 auto; 
   padding: 50px;
   display: flex;
+  justify-content: space-between;
   background-color: var(--light-grey);
 }
 
 .footer-main__link {
   cursor: pointer;
+  width: 33%;
 }
 
 .footer-main__link:active {
@@ -222,8 +223,7 @@ export default {
 
 .footer-main__social {
   display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
+  justify-content: center ;
   align-items: center;
 }
 
@@ -235,7 +235,7 @@ export default {
 .footer-main__develop {
   display: flex;
   align-items: center;
-
+  justify-content:flex-end;
 }
 
 .footer-main__develop-capture {
