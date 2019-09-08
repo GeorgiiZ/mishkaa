@@ -4,34 +4,28 @@
             <nav>
               <ul class="nav-main">
                 <li class="nav-item" style="width: 20%">
-                    <router-link class = "nav-item__link 
-                                          nav-item_indent" :to ="{name: 'catalog'}" exact >
+                    <router-link class = "nav-item__link" :to ="{name: 'catalog'}" exact >
                         Каталог товаров
                     </router-link>
-                    <span class="nav-item__text-outer 
-                                 nav-item_indent
+                    <span class="nav-item__text-outer
                                  nav-item__link">
                         Новые поступления
                     </span>
                 </li>
                 <li class="nav-item" style="width: 50%">
-                    <router-link class = "nav-item__link 
-                                          nav-item_indent" :to="{name: 'form'}">
-                        Вязание на заказ
+                    <router-link class = "nav-item__link" :to="{name: 'form'}">
+                      Вязание на заказ
                     </router-link>
-                    <router-link class = "nav-item__link
-                                            nav-item_centered" to="/">
+                    <router-link class = "nav-item__link" to="/">
                         <img src="../assets/mishkalogodesktopsvg.png" alt="mishka-logo"/>
                     </router-link>
                     <span class="nav-item__text-outer
-                                nav-item_indent
-                                nav-item__link ">
+                                 nav-item__link">
                         Распродажа
                     </span>
                 </li>
                 <li class="nav-item" style="width: 10%"> 
-                    <img class="nav-item_centered
-                                nav-item__search" src="../assets/searchsvgcopy.png" alt="search-button"/>
+                    <img class="nav-item__search" src="../assets/searchsvgcopy.png" alt="search-button"/>
                 </li>
                 <li class="nav-item" style="border-right: none; width: 30%">
                     <div class="nav-item__cart">
@@ -110,25 +104,33 @@ export default {
   position: relative;
   display: flex;
   align-items: center;
-  padding: 10px 0;
   border-right: 1px solid #F5F5F5;
   border-bottom: 1px solid #F5F5F5;
 }
 
-.nav-item_indent {
+/* .nav-item_indent {
   margin-left:  50px;
   margin-right: 10px;
-}
+} */
 
 .nav-item_last {
   margin-left: 25px;
   font-weight: lighter;
 }
 
-.nav-item__link, a {
+a {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+}
+
+.nav-item__link{
+  display: flex;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  padding: 0 25px;
 }
 
 .nav-item__link:hover{
@@ -142,6 +144,7 @@ export default {
 .nav-item__search {
   opacity: 0.2;
   cursor: pointer;
+  margin: 0 auto;
 }
 
 .nav-item__search:hover {
@@ -157,12 +160,8 @@ export default {
   font-size: var(--text-size__light);
   font-weight: bold;
   position: absolute;
-  top: 100px;
+  top: 80px;
   z-index: 1;
-}
-
-.nav-item_centered {
-  margin: 0 auto;
 }
 
 .nav-item__cart {
