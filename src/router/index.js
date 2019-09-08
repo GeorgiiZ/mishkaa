@@ -15,7 +15,6 @@ import Layout from '../layout/Layout';
 Vue.use(Router);
 
 export default new Router({
-    mode: 'history',
     routes: [
         {
             path:'/',
