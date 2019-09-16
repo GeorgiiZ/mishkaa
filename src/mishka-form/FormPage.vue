@@ -10,12 +10,12 @@
                     <label class="controls__item form__radio">
                         <input type="radio" name="selectedKind" v-model="selectedKind" value="toy" required>
                         <span class="form__radio-custom"></span>
-                        <span class="controls__item_indent">Аксессуар для интерьера</span>
+                        <span class="form-control__caption">Аксессуар для интерьера</span>
                     </label>
                     <label class="controls__item form__radio">
                         <input type="radio" name="selectedKind" v-model="selectedKind" value="accessory" required>
                         <span class="form__radio-custom"></span>
-                        <span class="controls__item_indent">Детская игрушка</span>
+                        <span class="form-control__caption">Детская игрушка</span>
                     </label>
                 </div>
             </div>
@@ -23,11 +23,11 @@
                         form-section_highlighted
                         form-section_height-limited">
                 <span class="form-section__caption">цвет</span>
-                <div class="controls
-                            controls_wraped">
-                    <label v-for="(color, key) in availibleColors" :key="key" class="controls__item form__checkbox" >
+                <div class="form__container-checkbox">
+                    <label v-for="(color, key) in availibleColors" :key="key" class="form__checkbox" >
                         <input type="checkbox" name="selectedColor"  :value = "key" v-model="selectedColors"> 
-                        <span >{{ color | capitalize }}</span>
+                        <span class="form__checkbox-custom"></span>
+                        <span class="form-control__caption">{{ color | capitalize }}</span>
                     </label>
                 </div>
             </div>
@@ -35,18 +35,18 @@
                 <span class="form-section__caption">фио</span>
                 <div class="controls">
                     <div class="controls__item">
-                        <label  for="fistName">Имя:</label>
-                        <input type="text" id="fistName" name="fistName" class="form-input controls__item_indent"
+                        <label>Имя:</label>
+                        <input type="text" class="form-input"
                                v-model.trim="fullName.fistName" placeholder="Введите ваше имя*" autocomplete="off" required/>
                     </div>
                     <div class="controls__item">
-                        <label for="lastName">Фамилия:</label>
-                        <input type="text" id="lastName" name="lastName" class="form-input controls__item_indent"
+                        <label>Фамилия:</label>
+                        <input type="text" class="form-input"
                                v-model.trim="fullName.lastName" placeholder="Укажите фамилию*" autocomplete="off" required/>
                     </div>
                     <div class="controls__item">
-                        <label  for="fatherName">Отчество:</label>
-                        <input type="text" id="fatherName" name="fatherName" class="form-input controls__item_indent"
+                        <label>Отчество:</label>
+                        <input type="text" class="form-input"
                                v-model.trim="fullName.fatherName" placeholder="Отчество если желаете*" autocomplete="off" required/>
                     </div>
                 </div>
@@ -54,19 +54,19 @@
             <div class="form-section 
                         form-section_column
                         form-section_highlighted">
-                <div class="controls_inline" id="phoneNumberContainer" >
-                    <label class="form-section__caption" for="phoneNumber">тел</label>
-                    <input type="tel" id="phoneNumber" name="phoneNumber" class="form-input form-input_large"
+                <div class="controls_inline phoneNumberContainer">
+                    <label class="form-section__caption">тел</label>
+                    <input type="tel" class="form-input form-input_large"
                            v-model.trim="phoneNumber" placeholder="+7 XXX-XXX-XXXX" autocomplete="off" required/>
                 </div>
-                <div class="controls_inline" id="emailContainer">
-                    <label class="form-section__caption" for="email">E-mail</label>
-                    <input type="email" id="email" name="email" class="form-input form-input_large"
+                <div class="controls_inline emailContainer">
+                    <label class="form-section__caption">E-mail</label>
+                    <input type="email" class="form-input form-input_large"
                            v-model.trim="email" placeholder="Ваш Email*" autocomplete="off" required/>
                 </div>
             </div>
             <div class="form-section">
-                <label class="form-section__caption" for="addWishes">доп</label>
+                <label class="form-section__caption">доп</label>
                 <div class="controls">
                     <div class="controls__item">
                         <textarea name="email"
@@ -165,6 +165,7 @@ export default {
 
 .initial-info__paragraph {
     max-width: 700px;
+    line-height: 180%;
 }
 
 .form__radio-custom {
@@ -186,15 +187,44 @@ export default {
     border-radius: 50%;
 }
 
+.form-control__caption {
+    margin-left: 25px; 
+}
+
+.form__container-checkbox{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 0 150px 0 100px; 
+    width: 100%;
+}
+
+.form__checkbox {
+    padding: 0 50px 50px 0;
+    display: flex;
+    align-items: center;
+}
+
+.form__checkbox-custom {
+    position: relative;
+    min-height: 50px;
+    min-width: 50px;
+    background-color: inherit;
+    border: 2px solid black;
+}
+
+
+.form__checkbox input:checked ~ .form__checkbox-custom {
+    background: url("../assets/sprite/sprite.svg#tick") no-repeat;
+    background-position: center;
+    background-size: 30px;
+}
+
 
 .controls {
     width: 100%;
     display: flex;
     flex-direction: column;
-}
-
-.controls_wraped {
-    flex-wrap: wrap;
 }
 
 .controls_inline {
@@ -216,12 +246,6 @@ export default {
      margin-left: 25px; 
 } 
 
-.controls__item_indent-absolute {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-}
-
 
 .form-input {
     border : none;
@@ -231,6 +255,7 @@ export default {
     border-bottom: 2px solid black;
     min-height: 50px; 
     width: 100%;
+    margin-left: 25px; 
 }
 
 .form-input_large {
@@ -241,13 +266,13 @@ export default {
 }
 
 
-#phoneNumberContainer::after{
+.phoneNumberContainer::after{
     position: absolute;
     right: 170px;
     content: url("../assets/phonesvg.png");
 }
 
-#emailContainer::after {
+.emailContainer::after {
     position: absolute;
     right: 170px;
     content: url("../assets/mailsvg.png");
@@ -258,6 +283,7 @@ export default {
     min-height : 150px;
     resize: none;
     border: 2px solid black;
+    margin: 0;
 }
 
 .form-input:focus{
@@ -299,12 +325,7 @@ textarea {
     font-size: var(--text-size__regular);
 }
 
-.form__checkbox input:checked + span:before  {
-    content: url("../assets/VectorSmartObjectcop.png");
-    position: absolute;
-    top: 0;
-    left: 25px;
-}
+
 
 </style>
 
