@@ -58,8 +58,7 @@ export default {
 <style scoped>
 
 .catalog-main {
-    padding: 50px;
-    margin: 50px 0;
+    padding: 100px 50px;
     font-size: var(--text-size__light);
 }
 

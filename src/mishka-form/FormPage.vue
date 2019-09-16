@@ -1,20 +1,20 @@
 <template>
     <div class = "form-container">
         <form method="GET" action="#">
-            <div class="form-section">
-                <p class="initial-info">
-                    Мы будем рады воплотить в жизнь ваши пожелания! Заполните форму заказа и мы свяжемся с вами, чтобы уточнить детали.
-                </p>
+            <div  class="initial-info">
+                <span class="initial-info__paragraph" >Мы будем рады воплотить в жизнь ваши пожелания! Заполните форму заказа и мы свяжемся с вами, чтобы уточнить детали.</span>
             </div>
             <div class="form-section">
                 <span class="form-section__caption">тип</span>
                 <div class="controls">
-                    <label class="controls__item">
+                    <label class="controls__item form__radio">
                         <input type="radio" name="selectedKind" v-model="selectedKind" value="toy" required>
+                        <span class="form__radio-custom"></span>
                         <span class="controls__item_indent">Аксессуар для интерьера</span>
                     </label>
-                    <label class="controls__item">
+                    <label class="controls__item form__radio">
                         <input type="radio" name="selectedKind" v-model="selectedKind" value="accessory" required>
+                        <span class="form__radio-custom"></span>
                         <span class="controls__item_indent">Детская игрушка</span>
                     </label>
                 </div>
@@ -25,12 +25,10 @@
                 <span class="form-section__caption">цвет</span>
                 <div class="controls
                             controls_wraped">
-                    <div v-for="(color, key) in availibleColors" :key="key" class="controls__item" > 
-                        <label>
-                            <input type="checkbox" name="selectedColor"  :value = "key" v-model="selectedColors"> 
-                            <span class="controls__item_indent">{{color | capitalize}}</span>
-                        </label>
-                    </div>
+                    <label v-for="(color, key) in availibleColors" :key="key" class="controls__item form__checkbox" >
+                        <input type="checkbox" name="selectedColor"  :value = "key" v-model="selectedColors"> 
+                        <span >{{ color | capitalize }}</span>
+                    </label>
                 </div>
             </div>
             <div class="form-section">
@@ -67,21 +65,21 @@
                            v-model.trim="email" placeholder="Ваш Email*" autocomplete="off" required/>
                 </div>
             </div>
-            <div class="form-section
-                        form-section_add-wishes">
+            <div class="form-section">
                 <label class="form-section__caption" for="addWishes">доп</label>
                 <div class="controls">
-                    <textarea name="email"
-                              v-model.trim="addWishes"
-                              class="form-input 
-                                     form-input_textarea 
-                                     controls__item " 
-                              placeholder="Опишите ваши пожелания к заказу*" required/>
+                    <div class="controls__item">
+                        <textarea name="email"
+                                  v-model.trim="addWishes"
+                                  class="form-input 
+                                         form-input_textarea" 
+                                  placeholder="Опишите ваши пожелания к заказу*" required/>
+                    </div>
                     <div class="make-order controls__item">
                         <button type="submit" 
                             class="make-order__btn"
                             @click="sendOrder()">отправить заказ</button>
-                        <p class="make-order__paragraph">*Поля обязательны для заполнения</p>
+                        <span class="make-order__paragraph">*Поля обязательны для заполнения</span>
                     </div>
                 </div>
             </div>
@@ -128,11 +126,12 @@ export default {
     display: flex;
     flex-direction: column;
     font-size: var(--text-size__regular);
+    font-weight: bold;
 }
 
 .form-section {
     display: flex;
-    padding: 50px 100px 0 100px;
+    padding: 50px 0 0 100px;
 }
 
 ::placeholder {
@@ -152,10 +151,6 @@ export default {
     flex-direction: column;
 }
 
-.form-section_add-wishes {
-    min-height: 300px;
-}
-
 .form-section__caption {
     color:turquoise;
     font-weight: bold;
@@ -163,9 +158,34 @@ export default {
 }
 
 .initial-info {
+    display: flex;
     font-size: var(--text-size__light);
-    margin: 30px 135px 0 135px;
+    padding: 70px  0  0 230px;
 }
+
+.initial-info__paragraph {
+    max-width: 700px;
+}
+
+.form__radio-custom {
+    position: relative;
+    min-height: 50px;
+    min-width: 50px;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+.form__radio input:checked ~ .form__radio-custom::after{
+    content: "";
+    position: absolute;
+    top: 13px;
+	left: 13px;
+    width: 23px;
+    height: 23px;
+    background-color: turquoise;
+    border-radius: 50%;
+}
+
 
 .controls {
     width: 100%;
@@ -186,13 +206,15 @@ export default {
 }
 
 .controls__item {
+    display: flex;
+    align-items: center;
     position: relative;
-    margin: 0 0px 50px 100px;
+    padding: 0 150px 80px 80px;
 }
 
 .controls__item_indent {
-    margin-left: 50px; 
-}
+     margin-left: 25px; 
+} 
 
 .controls__item_indent-absolute {
     position: absolute;
@@ -205,14 +227,17 @@ export default {
     border : none;
     padding-left: 15px; 
     text-overflow: ellipsis;
+    background-color: inherit;
+    border-bottom: 2px solid black;
+    min-height: 50px; 
+    width: 100%;
 }
 
 .form-input_large {
     position: relative;
-    height:5rem;
-    min-width: 70%;
-    margin-left: auto; 
-    margin-right: 150px;
+    min-height: 80px;
+    /* margin-left: auto; 
+    margin-right: 150px; */
 }
 
 
@@ -230,8 +255,9 @@ export default {
 
 .form-input_textarea {
     width: 100%; 
-    height : 30%;
+    min-height : 150px;
     resize: none;
+    border: 2px solid black;
 }
 
 .form-input:focus{
@@ -241,26 +267,26 @@ export default {
 .make-order {
     display: flex;
     align-items: center;
-    width: 100%;
 }
 
 .make-order__btn{
     padding: 15px;
-    max-width: 250px;
+    min-width: 250px;
     text-transform: uppercase;
     font-weight: bold;
     outline: inherit;
     background-color: transparent;
-    border: none;
+    border: 2px black solid;
     cursor: pointer;
 }
 
 .make-order__paragraph {
     margin-left: auto;
-    margin-right: 250px;
+    font-weight: normal;
 }
 
 input[type="checkbox"], input[type="radio"] {
+    position: absolute;
     display: none;
     font-size: var(--text-size__regular);
 }
@@ -273,11 +299,11 @@ textarea {
     font-size: var(--text-size__regular);
 }
 
-:checked + span:before  {
+.form__checkbox input:checked + span:before  {
     content: url("../assets/VectorSmartObjectcop.png");
     position: absolute;
     top: 0;
-    left: 0;
+    left: 25px;
 }
 
 </style>

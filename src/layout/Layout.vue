@@ -56,7 +56,7 @@
               <img class="footer-main__social-img" src="../assets/twittersvg.png" alt="twitter-link"/>
             </div>
             <a class="footer-main__develop
-                    footer-main__link" target="_blank" href="https://htmlacademy.ru/intensive/adaptive">
+                      footer-main__link" target="_blank" href="https://htmlacademy.ru/intensive/adaptive">
               <span class="footer-main__develop-capture">Разработано</span>
               <img src="../assets/htmlacademysvg.png" alt="htmlacademy-link"/>
             </a>
@@ -90,12 +90,19 @@ export default {
 
 <style scoped>
 
-.nav-main {
-  width: 1150px;
+.layout {
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
+}
+
+
+.nav-main {
   padding: 0px;
   display: flex;
   list-style: none;
+  margin: 0;
 }
 
 .nav-item {
@@ -107,11 +114,6 @@ export default {
   border-right: 1px solid #F5F5F5;
   border-bottom: 1px solid #F5F5F5;
 }
-
-/* .nav-item_indent {
-  margin-left:  50px;
-  margin-right: 10px;
-} */
 
 .nav-item_last {
   margin-left: 25px;
@@ -130,7 +132,7 @@ a {
   width: 100%;
   height: 100%;
   align-items: center;
-  padding: 0 25px;
+  padding: 10px 25px;
 }
 
 .nav-item__link:hover{
@@ -194,8 +196,9 @@ a {
 }
 
 .main-content {
-  width: 1150px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .main-content__header {
@@ -203,8 +206,8 @@ a {
 }
 
 .footer-main {
-  width: 1050px;
-  margin: auto auto 0 auto; 
+  width: 92%;
+  margin: auto 0; 
   padding: 50px;
   display: flex;
   justify-content: space-between;

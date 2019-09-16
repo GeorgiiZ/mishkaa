@@ -55,7 +55,7 @@ export default {
     width: 100%;
     height: 34px;
     background: url("../assets/zigzagfilldesktopsvg.png");
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     z-index: 1;
 }
@@ -65,7 +65,7 @@ export default {
     display: flex;
     background-color:	#353839;
     align-items: center;
-    width: 39.2%;
+    width: 39.6%;
     height: 100px;
     padding: 0 0 3% 25px;
 }

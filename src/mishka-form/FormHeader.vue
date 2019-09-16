@@ -36,7 +36,7 @@ export default {
 .form-header::after {
     content: '';
     position: absolute;
-    width: 1150px;
+    width: 100%;
 	height: 34px;
     background: url("../assets/zigzagfilldesktopsvg.png");
     bottom: 0;
