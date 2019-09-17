@@ -51,8 +51,8 @@
                     </div>
                 </div>
             </div>
-            <div class="form-section 
-                        form-section_column
+            <div class="form-section
+                        form-section__contacts
                         form-section_highlighted">
                 <div class="controls_inline phoneNumberContainer">
                     <label class="form-section__caption">тел</label>
@@ -131,7 +131,7 @@ export default {
 
 .form-section {
     display: flex;
-    padding: 50px 0 0 100px;
+    padding: 50px 150px 0 100px;
 }
 
 ::placeholder {
@@ -147,8 +147,10 @@ export default {
     max-height: 210px;
 }
 
-.form-section_column {
+.form-section__contacts {
     flex-direction: column;
+    /* padding: 0 150px 0 100px;;  */
+
 }
 
 .form-section__caption {
@@ -195,7 +197,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    padding: 0 150px 0 100px; 
+    padding: 0 0 0 100px; 
     width: 100%;
 }
 
@@ -232,14 +234,14 @@ export default {
     width: 100%;
     display: flex;
     align-items: center;
-    margin-bottom: 50px;
+    padding-bottom: 50px; 
 }
 
 .controls__item {
     display: flex;
     align-items: center;
     position: relative;
-    padding: 0 150px 80px 80px;
+    padding: 0 0 80px 80px;
 }
 
 .controls__item_indent {
@@ -249,33 +251,19 @@ export default {
 
 .form-input {
     border : none;
-    padding-left: 15px; 
     text-overflow: ellipsis;
     background-color: inherit;
     border-bottom: 2px solid black;
     min-height: 50px; 
-    width: 100%;
     margin-left: 25px; 
+    padding-left: 15px; 
+    flex:1;
 }
 
 .form-input_large {
     position: relative;
     min-height: 80px;
-    /* margin-left: auto; 
-    margin-right: 150px; */
-}
-
-
-.phoneNumberContainer::after{
-    position: absolute;
-    right: 170px;
-    content: url("../assets/phonesvg.png");
-}
-
-.emailContainer::after {
-    position: absolute;
-    right: 170px;
-    content: url("../assets/mailsvg.png");
+    padding-right: 30px; 
 }
 
 .form-input_textarea {
@@ -284,7 +272,22 @@ export default {
     resize: none;
     border: 2px solid black;
     margin: 0;
+    padding: 15px; 
 }
+
+.phoneNumberContainer::after{
+    position: absolute;
+    right: 0;
+    content: url("../assets/phonesvg.png");
+}
+
+.emailContainer::after {
+    position: absolute;
+    right: 0;
+    content: url("../assets/mailsvg.png");
+}
+
+
 
 .form-input:focus{
     outline: none;
