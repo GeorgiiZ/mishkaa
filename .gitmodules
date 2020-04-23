@@ -3,3 +3,5 @@
 	url = https://github.com/GeorgiiZ/sedona
 [submodule]
 	recurse = true
+[push]
+	recurseSubmodules = on-demand
