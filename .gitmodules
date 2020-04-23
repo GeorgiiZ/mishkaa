@@ -1,6 +1,5 @@
 [submodule "sedona"]
 	path = sedona
 	url = https://github.com/GeorgiiZ/sedona
-	branch = master
 [submodule]
 	recurse = true
