@@ -1,0 +1,3 @@
+[submodule "sedona"]
+	path = sedona
+	url = https://github.com/GeorgiiZ/sedona
