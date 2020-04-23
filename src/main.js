@@ -14,7 +14,6 @@ Vue.filter('capitalize', capitalizeFilter);
 Vue.filter('mapUnit', mapUnit);
 Vue.filter('mapParamName', mapParamName);
 
-
 new Vue({
   render: h => h(App),
   router: router,
