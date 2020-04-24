@@ -3,4 +3,4 @@
 	url = https://github.com/GeorgiiZ/sedona
 [submodule]
 	recurse = true
-	branch = master
+	branch = fbranch
