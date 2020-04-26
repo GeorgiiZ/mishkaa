@@ -4,4 +4,4 @@
 	recurse = true
 	branch = f0000
 [push "sedona"]
-	recurseSubmodules = on-demand
+	recurseSubmodules = check
