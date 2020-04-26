@@ -1,2 +1,5 @@
 #!/bin/bash
-git checkout foo || git checkout -b foo	
+# Ask the user for their name
+echo Hello, who am I talking to?
+read varname
+echo It\'s nice to meet you $varname
