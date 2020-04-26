@@ -14,3 +14,11 @@ cd ..
 
 echo $prjctBranch
 echo $submoduleBranch
+
+
+# git stash push
+# git checkout <branch> || git checkout -b <branch>
+# git stash apply
+# git add .
+# git commit -m "Some changes to submodule"
+#
