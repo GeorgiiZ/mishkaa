@@ -4,6 +4,6 @@
 	recurse = true
 	branch = master
 [push "sedona"]
-	recurseSubmodules = check
+	recurseSubmodules = on-demand
 
 
