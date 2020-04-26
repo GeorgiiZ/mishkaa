@@ -1,24 +1,15 @@
+#!/bin/bash
 function getCurBranch(){
     echo $(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
 }
 
+branch=$(getCurBranch)
 
-prjctBranch=$(getCurBranch)
+git stash push
+git checkout $branch || git checkout -b $branch
+git push || git push --set-upstream origin $branch
+git stash apply
+git config -f .gitmodules submodule.<submodule name>.branch $branch
+git add .
+git commit -m "Some changes to submodule"
 
-
-
-cd sedona
-submoduleBranch=$(getCurBranch)
-cd ..
-
-
-echo $prjctBranch
-echo $submoduleBranch
-
-
-# git stash push
-# git checkout <branch> || git checkout -b <branch>
-# git stash apply
-# git add .
-# git commit -m "Some changes to submodule"
-# git push || git push --set-upstream origin <branch>
