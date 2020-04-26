@@ -21,4 +21,4 @@ echo $submoduleBranch
 # git stash apply
 # git add .
 # git commit -m "Some changes to submodule"
-#
+# git push || git push --set-upstream origin <branch>

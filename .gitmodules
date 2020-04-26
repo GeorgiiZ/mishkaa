@@ -4,4 +4,4 @@
 	recurse = true
 	branch = foo
 [push "sedona"]
-	recurseSubmodules = on-demand
+	recurseSubmodules = on-demandcd
