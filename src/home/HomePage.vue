@@ -17,7 +17,6 @@
     </div>
 </template>
 
-
 <script>
 import WeekProduct from './components/WeekProductSection';
 import weekProduct from '../api/week-product';

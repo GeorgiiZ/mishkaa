@@ -1,0 +1,16 @@
+function getCurBranch(){
+    echo $(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+}
+
+
+prjctBranch=$(getCurBranch)
+
+
+
+cd sedona
+submoduleBranch=$(getCurBranch)
+cd ..
+
+
+echo $prjctBranch
+echo $submoduleBranch
