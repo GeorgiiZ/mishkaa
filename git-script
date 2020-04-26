@@ -4,12 +4,12 @@ function getCurBranch(){
 }
 
 branch=$(getCurBranch)
+git config -f .gitmodules submodule.sedona.branch $branch
 
 git stash push
 git checkout $branch || git checkout -b $branch
 git push || git push --set-upstream origin $branch
 git stash apply
-git config -f .gitmodules submodule.<submodule name>.branch $branch
 git add .
 git commit -m "Some changes to submodule"
 
