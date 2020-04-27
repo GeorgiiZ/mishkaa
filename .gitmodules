@@ -2,7 +2,7 @@
 	path = sedona
 	url = https://github.com/GeorgiiZ/sedona
 	recurse = true
-	branch = f0003
+	branch = fsubtree
 [push "sedona"]
 	recurseSubmodules = on-demand
 
