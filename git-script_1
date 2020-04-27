@@ -1,5 +1,8 @@
 #!/bin/bash
-# Ask the user for their name
-echo Hello, who am I talking to?
-read varname
-echo It\'s nice to meet you $varname
+function getCurBranch(){
+    echo $(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+}
+
+branch=$(getCurBranch)
+git config -f .gitmodules submodule.sedona.branch $branch
+git submodule update --remote --merge
