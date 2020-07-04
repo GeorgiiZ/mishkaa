@@ -1,8 +1,0 @@
-#!/bin/bash
-function getCurBranch(){
-    echo $(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
-}
-
-branch=$(getCurBranch)
-git config -f .gitmodules submodule.sedona.branch $branch
-git submodule update --remote --merge

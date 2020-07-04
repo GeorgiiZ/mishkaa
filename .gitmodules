@@ -1,9 +1,0 @@
-[submodule "sedona"]
-	path = sedona
-	url = https://github.com/GeorgiiZ/sedona
-	recurse = true
-	branch = master
-[push "sedona"]
-	recurseSubmodules = on-demand
-
-
